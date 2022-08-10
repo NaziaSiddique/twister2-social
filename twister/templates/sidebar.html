@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% extends "base.html" %}
+        {% block content %}
+  <body>
+      <!-- login page nav -->
+      <nav class="login-page-nav">
+        <ul>
+          <li class="brand">
+            <a href="#"><i class="fas fa-dove"></i> Home</a>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Language: English</a></li>
+        </ul>
+      </nav>
+      <!-- end of login page nav -->
+
+    <!-- login -->
+    <div class="login" style="margin-left: 25%;">
+        <div class="login-content">
+          <h2>Sign Up to Twister</h2>
+          <form action="register" method="post" class="login-form">
+            <input
+            id = "name"
+            name = "name"
+            type="text"
+            placeholder="Full Name"
+            class="login-user-info"
+          />
+            <input
+              id = "username"
+              name = "username"
+              type="text"
+              placeholder="username"
+              class="login-user-info"
+            />
+            <input
+              id = "email"
+              name = "email"
+              type="text"
+              placeholder="email"
+              class="login-user-info"
+            />
+            <input
+              id = "password"
+              name = "password"
+              type="password"
+              placeholder="Password"
+              class="login-password"
+            />
+            <input
+              id = "confirm_password"
+              name = "confirm_password"
+              type="password"
+              placeholder="Password"
+              class="login-password"
+            />
+            <div>
+              <button type="submit" class="login-form-btn">Sign Up</button>
+              <input type="checkbox" class="login-form-checkbox" id="check" />
+              <label for="check">Remember me</label>
+              <a href="#">Forgot password?</a>
+            </div>
+          </form>
+        </div>
+        <footer class="login-footer">
+          <p>New to Twister? <a href="./register">Sign up now</a></p>
+
+        </footer>
+      </div>
+      <!-- end of login -->
+
+   </body>
+</html>
+{% endblock %}
