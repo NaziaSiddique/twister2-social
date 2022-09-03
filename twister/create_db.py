@@ -1,4 +1,4 @@
-from models import *
+from twister.models import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
