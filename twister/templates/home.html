@@ -51,17 +51,11 @@
       <!-- footer -->
       <footer class="main-page-footer">
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Apps</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Status</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Developers</a></li>
+          {% for item in ["About", "Blog", "Help", "Terms",
+                          "Apps", "Settings", "Contact", "Status",
+                          "Privacy Policy", "Brand", "Developers" ] %}
+            <li><a href="#">{{ item }}</a></li>
+          {% endfor %}
           <li><a href="#">&copy; 2022 Twister</a></li>
         </ul>
       </footer>
