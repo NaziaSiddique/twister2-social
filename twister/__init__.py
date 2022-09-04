@@ -1,6 +1,3 @@
-## FLASK APP
-
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 import flask
 from flask_sqlalchemy import SQLAlchemy
