@@ -12,7 +12,6 @@ mongo_db = client["POSTS"]  # create a database
 post_collection = mongo_db["posts"]  # create a collection
 
 
-
 # delete"twitter.db" if it exists
 if os.path.exists("twitter.db"):
     os.remove("twitter.db")
