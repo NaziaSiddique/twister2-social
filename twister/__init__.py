@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
-import flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required, UserMixin
-from werkzeug.utils import secure_filename
-from datetime import datetime
 
 import pymongo
 import twister.env as env
