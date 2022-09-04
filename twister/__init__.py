@@ -5,8 +5,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required, UserMixin
 from werkzeug.utils import secure_filename
 from datetime import datetime
-import sys
-import json
+
 import pymongo
 import twister.env as env
 mongo_client  = pymongo.MongoClient("mongodb://localhost:27017/") # create a mongo client
