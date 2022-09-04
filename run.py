@@ -1,5 +1,4 @@
 """ imports """
-import os
 from twister import app
 
 
