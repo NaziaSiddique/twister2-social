@@ -57,14 +57,14 @@ Twister is the third and my personal favourite project created for the Code Inst
 
 * First Time Visitor Goals (a first-time user/business who has not created an account). 
 
- I want to be able to: 
-• Immediately understand the main purpose and use of the application 
-• Have the ability to register/create a user account easily 
-• Easily navigate to the site to get the information that I need 
+ I want to be able to:
+• Immediately understand the main purpose and use of the application
+• Have the ability to register/create a user account easily
+• Easily navigate to the site to get the information that I need
 
 * Registered User Goals (Consumers) 
 
-I want to be able to: 
+I want to be able to:
 • Learn more about what I can do on the Twister App 
 • Add, edit, retrieve, and delete my own data 
 • Add my own profile picture and set up my own profile  
