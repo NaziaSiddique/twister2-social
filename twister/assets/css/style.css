@@ -27,7 +27,7 @@ body {
 .left {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  background-color: #f2641d;
+  background-color: #f55d11;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,8 +95,8 @@ body {
 .btn-top {
   width: 8rem;
   background-color: #fff;
-  color: #f2641d;
-  border: 0.1rem solid #f2641d;
+  color: #f55d11;
+  border: 0.1rem solid #f55d11;
   border-radius: 3rem;
   font-size: 1.4rem;
   font-weight: bold;
@@ -120,7 +120,7 @@ body {
 
 .middle-content i {
   font-size: 4rem;
-  color: #f2641d;
+  color: #f55d11;
   margin-bottom: 2rem;
 }
 
@@ -138,7 +138,7 @@ body {
 .middle-content button {
   margin: 0.8rem 0;
   padding: 0.5rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 4rem;
   font-size: 1.6rem;
   cursor: pointer;
@@ -146,12 +146,12 @@ body {
 }
 
 .sign-up {
-  background-color: #f2641d;
+  background-color: #f55d11;
   color: #fff;
 }
 
 .sign-up:hover {
-  background-color: #f2641d;
+  background-color: #f55d11;
 }
 
 .log-in {
@@ -229,7 +229,7 @@ body {
   content: '';
   width: 100%;
   height: 0.4rem;
-  background-color: #f2641d;
+  background-color: #f55d11;
   position: absolute;
   bottom: -2.5rem;
   left: 0;
@@ -249,11 +249,11 @@ body {
 }
 
 .login-page-nav li:hover a {
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .login-page-nav i {
-  color: #f2641d;
+  color: #f55d11;
   font-size: 2rem;
 }
 /* end of login page nav */
@@ -307,10 +307,10 @@ body {
 
 .login-form button {
   padding: 1rem 1.5rem;
-  background-color: #f2641d;
+  background-color: #f55d11;
   color: #fff;
   border-radius: 4rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   font-size: 1.5rem;
   font-weight: bold;
   margin-right: 1rem;
@@ -326,7 +326,7 @@ body {
 .login-form a {
   text-decoration: none;
   font-size: 1.6rem;
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .login-footer {
@@ -348,7 +348,7 @@ body {
 
 .login-footer a {
   text-decoration: none;
-  color: #f2641d;
+  color: #f55d11;
 }
 /* end of login */
 
@@ -415,7 +415,7 @@ body {
 }
 
 .icons .active {
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .search-bar {
@@ -436,7 +436,7 @@ body {
 
 .search-bar-input:focus {
   background-color: #fff;
-  border-color: #f2641d;
+  border-color: #f55d11;
 }
 
 .search-bar i {
@@ -508,7 +508,7 @@ body {
 
 .header-top i {
   font-size: 2rem;
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .header-post {
@@ -542,7 +542,7 @@ body {
 
 .header-post i {
   font-size: 2.5rem;
-  color: #f2641d;
+  color: #f55d11;
   margin: 1rem;
 }
 
@@ -585,7 +585,7 @@ body {
 
 .post-user-info i {
   font-size: 1.6rem;
-  color: #f2641d;
+  color: #f55d11;
   margin-right: 0.5rem;
 }
 
@@ -664,9 +664,9 @@ body {
   margin-left: auto;
   width: 9rem;
   background-color: #fff;
-  color: #f2641d;
+  color: #f55d11;
   padding: 0.7rem 0.5rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 2rem;
   font-size: 1.6rem;
   cursor: pointer;
@@ -678,7 +678,7 @@ body {
 
 .follow-link a {
   text-decoration: none;
-  color: #f2641d;
+  color: #f55d11;
   font-size: 1.5rem;
 }
 
@@ -706,10 +706,10 @@ body {
   left: 68%;
   width: 12rem;
   padding: 1.5rem 1rem;
-  background-color: #f2641d;
+  background-color: #f55d11;
   color: #fff;
   font-size: 2rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 3rem;
   cursor: pointer;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
@@ -717,7 +717,7 @@ body {
 }
 
 .post-btn:hover {
-  background-color: #f2641d;
+  background-color: #f55d11;
 }
 
 /* post modal */
@@ -757,7 +757,7 @@ body {
 
 .modal-header i {
   font-size: 2.3rem;
-  color: #f2641d;
+  color: #f55d11;
   cursor: pointer;
 }
 
@@ -765,10 +765,10 @@ body {
   margin-left: auto;
   width: 8rem;
   padding: 0.8rem 0.5rem;
-  background-color: #f2641d;
+  background-color: #f55d11;
   color: #fff;
   font-size: 1.6rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 3rem;
   opacity: 0.5;
 }
@@ -802,7 +802,7 @@ body {
 
 .modal-input:focus {
   background-color: #fff;
-  border-color: #f2641d;
+  border-color: #f55d11;
 }
 
 .modal-body i {
@@ -810,7 +810,7 @@ body {
   bottom: 8.5rem;
   right: 2.8rem;
   font-size: 2rem;
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .modal-footer {
@@ -825,7 +825,7 @@ body {
 .modal-icons i {
   margin-right: 2rem;
   font-size: 2.7rem;
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .modal-icons span {
@@ -833,12 +833,12 @@ body {
   font-size: 5rem;
   width: 4rem;
   height: 4rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f2641d;
+  color: #f55d11;
   opacity: 0.5;
 }
 /* end of post modal */
@@ -892,7 +892,7 @@ body {
 .sidebar-header i {
   margin-left: auto;
   font-size: 2.5rem;
-  color: #f2641d;
+  color: #f55d11;
   cursor: pointer;
 }
 
@@ -919,12 +919,12 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   font-size: 5rem;
-  border: 0.1rem solid #f2641d;
+  border: 0.1rem solid #f55d11;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f2641d;
+  color: #f55d11;
 }
 
 .sidebar-user-info {
@@ -1027,7 +1027,7 @@ body {
 
 .move {
   left: 2.5rem;
-  background-color: #f2641d;
+  background-color: #f55d11;
 }
 
 .dark-1 {
