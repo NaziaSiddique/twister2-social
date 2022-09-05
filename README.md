@@ -17,9 +17,9 @@ Twister is a social media platform, similar to Twitter, specifically to connect 
 Twister is the third and my personal favourite project created for the Code Institute’s Level 5 Diploma in Web Application Development (Full Stack Software Development). To make an app to rival Twitter’s was very challenging, but something I felt confident I could take on. Twitter is my most used social media platform, with some great features that I really wanted to incorporate into Twister. Features including the ability to re-post, follow live conversations, chime in on existing threads, scroll through timelines, explore what’s trending using hashtags on topics that matter to the user, join communities, track what’s happening around the business world and find a platform to voice consumer opinions/reviews on the latest gadgets and products. The Twister app also allows users to build their own customisable profiles, add a profile picture, description, location, and a background photo.  
 
 
-## User Experience
+# User Experience
 
-# Project Goals
+## Project Goals
 
  
 • To develop a social media App specifically to connect businesses with other businesses and consumers (B2B, B2C & C2C)
@@ -40,7 +40,7 @@ Twister is the third and my personal favourite project created for the Code Inst
 
 • App should include defensive programming (Bcrypt) to make encryption stronger and guard against threats/hackers 
  
-# Consumer Demographics 
+## Consumer Demographics 
  
 • Ages 16 and above for registering and contributing to the Twister community 
 
@@ -63,7 +63,7 @@ Twister is the third and my personal favourite project created for the Code Inst
 • Registered users who want to be able to connect with other consumers to share ideas or have their voice heard 
  
  
-# Businesses Demographics 
+## Businesses Demographics 
  
 • Small, medium, large-scale businesses internationally  
 
@@ -75,9 +75,9 @@ Twister is the third and my personal favourite project created for the Code Inst
 
 • Businesses who are looking to liaise directly with their consumers and understand what they need  
 
-## User Stories
+# User Stories
 
-# First Time Visitor Goals (a first-time user/business who has not created an account). 
+## First Time Visitor Goals (a first-time user/business who has not created an account). 
 
  I want to be able to:
 • Immediately understand the main purpose and use of the application
@@ -86,7 +86,7 @@ Twister is the third and my personal favourite project created for the Code Inst
 
 • Easily navigate to the site to get the information that I need
 
-# Registered User Goals (Consumers) 
+## Registered User Goals (Consumers) 
 
 I want to be able to:
 • Learn more about what I can do on the Twister App 
