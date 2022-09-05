@@ -25,6 +25,10 @@ def about():
 def help():
     return render_template('subpages/help.html', title='Help')
 
+@app.route('/contact')
+def contact():
+    return render_template('subpages/contact.html', title='Contact')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
