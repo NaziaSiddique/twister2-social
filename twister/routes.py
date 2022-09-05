@@ -29,6 +29,14 @@ def help():
 def contact():
     return render_template('subpages/contact.html', title='Contact')
 
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template('subpages/privacy policy.html', title='Privacy Policy')
+
+@app.route('/brand')
+def brand():
+    return render_template('subpages/brand.html', title='Brand')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
