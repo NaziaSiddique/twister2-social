@@ -149,9 +149,58 @@ I want to be able to:
 
 ## Technologies Used
 
-* Languages Used
-* Frameworks, Libraries & Programs Used
-* Google Books API
+This app/website is programmed in the following languages: 
+• HTML5/CSS3 were used for the content, styling and structure of the site 
+
+• JavaScript was used for the dynamic elements if the site
+
+• Python was used for the back end programming of the site 
+
+• Flask – this was used to handle the templating for the site 
+
+• Postgres – this is relational database used to store the user profiles, avatars, profile, user registrations, login and authentication 
+
+• MongoDB – this is the nonrelational database used to store less structured data such as content that users post 
+
+• Flask-PyMongo – this provides MongoDB support for Flask applications 
+
+• Dnspython - this is a DNS toolkit for Python 
+
+• Werkzeug – this is a Web Server Gateway Interface web application library 
+
+• Jinja - this is a templating engine for Python, used to write Flask and other templating services 
+
+• Bcrypt – password-hashing function used as a security feature 
+
+• Click – Python package for creating beautiful command line interfaces in a composable way with as little code as necessary. It’s the “Command Line Interface Creation Kit”. It’s highly configurable but comes with sensible defaults out of the box.  
+
+• Flask-Bcrypt – this is a Flask extension that provides bcrypt hashing utilities for the site 
+
+• Flask-Login - provides the user session management for Flask. It handles the common tasks of logging in, logging out, and remembering users’ sessions over prolonged periods of time 
+
+• Flask-SQLAlchemy – this is an extension for Flask that adds support for SQLAlchemy to the site. It simplifies processes to make it easier to accomplish common tasks 
+
+• greenlet –  these are lightweight coroutines for in-process concurrent programming
+
+• itsdangerous –this enables data to be signed cryptographically to ensure that a token has not been tampered with 
+
+• pymongo – this is a Python distribution containing tool for working with MongoDB 
+
+• SQLAlchemy –  
+
+• gunicorn –  this is a Python Web Server Gateway Interface HTTP server. It allows the site to run any Python application concurrently by running multiple Python processes within a single dyno
+
+• Balsamiq - balsamiq was used to create the wireframes for this project 
+
+• Git - Git was used for version control and saving work in the repository 
+
+• Gitpod – Gitpod was used as the IDE to develop and code this website 
+
+• GitHub – used to host the site 
+
+• Heroku – where the live site is deployed 
+
+• Chrome - was used as the default testing browser 
 
 ## Deployment & Local Development
 
@@ -160,11 +209,37 @@ I want to be able to:
 * How to Fork
 * How to Clone
 
-## Testing
+# Testing
 
-## Credits
+# Credits
 
-* Code Used
-* Content
-* Media
-* Acknowledgments
+## Content 
+
+The text for all the pages of the website was created by me 
+ 
+The text was proof-read/edited by me 
+ 
+ 
+## Media 
+The logo (to be used) used on this site was designed by me 
+ 
+ 
+## Code 
+ 
+All code on this app/website is my own 
+ 
+ 
+## Acknowledgements 
+ 
+My inspiration for this website was from my own experience of using Twitter and other social media platforms 
+ 
+My course administrator Jo Bowden, who has helped and supported me throughout the development of this project. Her support has been invaluable! 
+ 
+A special shoutout to my fellow student, Joy Zadan, so glad to have you around for your technical knowledge as well as your daily support. 
+
+Thank you to Laravanth, a neighbour and friend, who borrowed me their laptop when my laptop stopped working in the last 48 hours.
+ 
+ 
+## Disclaimer 
+ 
+The content of this app is intended for my third project at the Code Institute only 
