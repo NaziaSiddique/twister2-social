@@ -49,14 +49,6 @@ body {
   font-size: 2rem;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    background-image:url('/static/images/logo.png');
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 /* end of left */
 
 /* right */
@@ -1417,4 +1409,9 @@ body {
 
   
 }
+
+.sub-page-content {
+    font-size: 2rem;
+}
+
 /* end of responsive */
