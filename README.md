@@ -186,7 +186,7 @@ This app/website is programmed in the following languages:
 
 • pymongo – this is a Python distribution containing tool for working with MongoDB 
 
-• SQLAlchemy –  
+• SQLAlchemy –  this is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL
 
 • gunicorn –  this is a Python Web Server Gateway Interface HTTP server. It allows the site to run any Python application concurrently by running multiple Python processes within a single dyno
 
@@ -201,6 +201,22 @@ This app/website is programmed in the following languages:
 • Heroku – where the live site is deployed 
 
 • Chrome - was used as the default testing browser 
+
+# Future Implementation
+
+• Allow registered users to delete their own account 
+
+• Build in in-app messaging feature, allowing users (businesses and consumers) to send private messages 
+
+• Chargeable Business Profile Features – set up an additional cost for registration  
+
+• FAQ Page – this will give potential clients answers to the most asked questions via a table with FAQs and dropdown buttons to view answers 
+
+• Add CAPTCHA to Contact Form – this will protect the site from being spammed  
+
+• GDPR Compliant Pop-Up Screen – this will ensure that the company complies with the EU data protection laws, by enabling visitors to the website to approve or deny the processing of their personal data 
+
+• Site Privacy Information – this will set out clear guidelines about what language restrictions there are in place, what behaviour is expected online and what actions will lead to accounts being blocked 
 
 ## Deployment & Local Development
 
