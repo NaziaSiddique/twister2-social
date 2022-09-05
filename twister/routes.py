@@ -21,6 +21,10 @@ def home():
 def about():
     return render_template('subpages/about.html', title='About')
 
+@app.route('/help')
+def help():
+    return render_template('subpages/help.html', title='Help')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:

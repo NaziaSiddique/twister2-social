@@ -52,8 +52,10 @@
       <!-- footer -->
       <footer class="main-page-footer">
         <ul>
-          {% for item in ["About", "Help", "Contact", "Privacy Policy", "Brand", "Developers" ] %}
-            <li><a href="#">{{ item }}</a></li>
+          {% for item in [["About", "/about"], ["Help", "/help"], ["Contact", "/contact"],
+                              ["Privacy Policy", "/privacy_policy"], ["Brand", "/brand"],
+                              ["Developers", "/developers"] ] %}
+            <li><a href="{{item[1]}}">{{ item[0] }}</a></li>
           {% endfor %}
           <li><a href="#">&copy; 2022 Twister</a></li>
         </ul>
