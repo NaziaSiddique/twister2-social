@@ -204,13 +204,75 @@ This app/website is programmed in the following languages:
 
 ## Deployment & Local Development
 
-* Deployment
-* Local Development
-* How to Fork
-* How to Clone
+This project was built using Gitpod and pushed to GitHub using the in-built functionality to commit and push (source control). 
+ 
+To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken: 
+Log into GitHub 
+From the list of repositories on the screen, select NaziaSiddique/twister2-social 
+From the menu items near the top of the page, select Settings 
+Scroll down to the GitHub Pages section 
+Under Source click the drop-down menu labelled None and select Main 
+By selecting Main the page is automatically refreshed and the website is now deployed 
+Scroll back down to the GitHub Pages section to retrieve the link to the deployed website 
+ 
+## Deployment to Heroku 
+ 
+To deploy this project, I used Heroku. The deployed version is the same as in the repository. These are the steps used for deployment to Heroku: 
+ 
+In GitPod CLI,  in root directory of the project, run: pip3 free --local > requirements.txt to create a requirements.txt file containing project dependencies 
+In the Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'. Open the Procfile. Inside the file, check that web: python3 app.py has been added when creating the file. Continue on to save the file 
+Login to Heroku, select ‘Create New App’, then add the desired name for your app, without any spaces and choose your closest region 
+Navigate to the ‘Deploy’ tab on Heroku dashboard and select Github, search for your repository and click 'Connect' 
+Navigate to the settings tab, click reveal config vars and input: 
+ 
+CLOUD_NAME: mycloudinaryname 
+API_KEY:	myapikey 
+API_SECRET:	myapisecret 
+IP: 0.0.0.0 
+PORT:	5000 
+MONGO_DBNAME:	mongodb_name mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>- 
+MONGO_URI:	4g3i1.mongodb.net/<DATABASE>?retryWrites=true&w=majority 
+SECRET_KEY:	mysecretkey 
+DATABASE_URL: postgresql 
+ 
+Go back to the ‘Deploy’ tab and enable ‘Automatic Deploys’ 
+Click ‘Deploy Branch’ 
+Once the build is complete, click ‘Open App’  
+ 
+ 
+## How to run this project locally 
+ 
+To clone this project into Gitpod you will need: 
+ 
+A Github account. Create a Github account  
+Use the Chrome browser 
+ 
+Then follow these steps: 
+ 
+Install the Gitpod Browser Extentions for Chrome 
+After installation, restart the browser 
+Log into Gitpod with your Gitpod account 
+Navigate to the Project GitHub repository 
+Click the green "Gitpod" button in the top right corner of the repository 
+This will trigger a new gitpod workspace to be created from the code in GitHub, where it can be worked on locally 
+ 
+To work on the project code within a local IDE such as VSCode, Pycharm etc: 
+ 
+Go to the link of the Project GitHub repository 
+Under the repository name, click "Clone or download" 
+In the Clone with HTTPs section, copy the clone URL for the repository 
+In your local IDE open the terminal 
+Change the current working directory to the location where you want the cloned directory to be made 
+Type git clone, and then paste the URL you copied in Step 3 
+git clone https://github.com/USERNAME/REPOSITORY 
+Press Enter and your local clone will be created 
+  
 
 # Testing
 
+ 
+ 
+ 
 # Credits
 
 ## Content 
