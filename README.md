@@ -10,7 +10,8 @@ Twister is a social media platform, similar to Twitter, specifically to connect 
 
  Twister is a social media application built using Python, Flask+SQLAlchemy, Flask+PyMongo, Bootstrap 5, Jinja2 and JavaScript. This Application is a hybrid database project using both MongoDB and PostgreSQL.   
  
-•	User Registration is handled using relational-backed database: PostgreSQL using Flask+SQLAlchemy 
+•	User Registration is handled using relational-backed database: PostgreSQL using Flask+SQLAlchemy
+
 •	Standard CRUD data manipulation i.e., user posts, re-posts etc is handled using a nonrelational-backed database: MongoDB using Flask+PyMongo 
  
 Twister is the third and my personal favourite project created for the Code Institute’s Level 5 Diploma in Web Application Development (Full Stack Software Development). To make an app to rival Twitter’s was very challenging, but something I felt confident I could take on. Twitter is my most used social media platform, with some great features that I really wanted to incorporate into Twister. Features including the ability to re-post, follow live conversations, chime in on existing threads, scroll through timelines, explore what’s trending using hashtags on topics that matter to the user, join communities, track what’s happening around the business world and find a platform to voice consumer opinions/reviews on the latest gadgets and products. The Twister app also allows users to build their own customisable profiles, add a profile picture, description, location, and a background photo.  
