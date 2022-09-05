@@ -37,6 +37,10 @@ def privacy_policy():
 def brand():
     return render_template('subpages/brand.html', title='Brand')
 
+@app.route('/developers')
+def developers():
+    return render_template('subpages/developers.html', title='Developers')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
