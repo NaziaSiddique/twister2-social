@@ -133,15 +133,20 @@ I want to be able to:
 
 • Have a business dashboard with the relevant analytical features useful for marketing 
 
-## Design
-
-* Colour Scheme
-* Typography
-* Imagery
-* Wireframes
-* Database Structure
+# Design
 
 # Features
+
+Landing Page: the landing page of the website features a orange modar with three lines of text in white describing what the site can be used for. The right-hand side of the landing page is white and split down the middle to separate it from the orange modar. The top right-hand   side of the landing page consists of two data inputting boxes, one for username and one for password. Right next to the boxes there’s a white and orange ‘Log in’, which allows users to log in to the site. There’s also a Forgotten Password? hyperlink under the boxes, which will navigate to another page on the site to allow users to reset their passwords. Towards the middle of the right-hand side of the landing page, the orange logo is featured, with the site tagline ‘Explore what’s happening in the world of business’, followed by ‘Join Twister Today’. There are two call to action buttons ‘Sign up’ and ‘Log In’, which will navigate users to the relevant pages to access the site.  
+At the bottom of the page, there are several pages that are hyperlinked to various information-based pages that can be accessed without registering. These pages are: About, Blog, Help, Terms, Apps, Settings, Contact, Status, Privacy Policy, Brand, Developers as well as a copyright logo.  
+The colours used on the landing page reflect the branding that is used consistently throughout the website: orange, white and black. The logo is also featured on every page once the user enters the site.  
+ All call-to-action buttons that link to a different page of the website and are fully responsive on both desktop mobile/tablet devices.  
+Paragraph locked by Zahra Gillani
+ 
+ 
+Log In Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Log in to Twister’, followed by two log-in boxes; one for the username and one for the password. This is followed by an orange call to action ‘Log In’ button and a check box feature to ‘Remember Me’ to save username and password, as well as a ‘Forgot Password?’ hyperlink to reset password. In smaller text there’s also the option for new users to the site, with the hyperlink option to ‘Sign up now’, which will re-navigate users to the Sign Up page.  
+ 
+Sign Up Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Sign Up to Twister’, followed by boxes to input the following data fields: full name, username, email, Password and Repeat Password. This is followed by an orange call to action ‘Sign Up’ button and a check box feature Remember Me’ to save username and password. 
 
 ## Existing Features 
  
