@@ -1,4 +1,4 @@
-###### Twister
+# <h1 align="center">TWISTER</h1>
 
 ### CONTENTS
 
