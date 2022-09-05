@@ -141,11 +141,45 @@ I want to be able to:
 * Wireframes
 * Database Structure
 
-## Features
+# Features
 
-* General Features of Each Page
-* Future Implementations
-* Accessibility
+## Existing Features 
+ 
+* Header Logo - Exists on every page and allows all users to easily navigate back to the home page by clicking on it 
+ 
+* Header Navigation Bar – Visible on every page and allows all users to easily navigate from page to page on the website and find what they are looking for quickly 
+ 
+* Footer Contact Details – Each page has phone contact details and company address 
+ 
+* Footer Social Icons - Exist on every page and allows all users to access the social platforms that the company uses by clicking the icons 
+ 
+* Call to Action Buttons - This feature is available on the Homepage and the Contact Us page, where potential clients can fill out a contact form to get in touch with the accounting company to start the process of hiring them or finding out more information about the services 
+ 
+* About Us Page - Allows potential clients to quickly get an overview of the company and its values; a small About Us section is also visible on the Homepage of the website 
+ 
+* Contact Form - Allows potential clients to ask questions, and/or make the first step in hiring the Accounting Firm. The detailed form on the Contact Us page also allows potential clients to add additional information on what services they are looking for based on what kind of organisation they are running 
+ 
+Log-in page:  
+  
+![login-page](https://user-images.githubusercontent.com/36114589/188512116-81a62b50-e719-4ebe-bd96-eac92121cc94.PNG) 
+  
+How a new post looks: 
+  
+![one-post](https://user-images.githubusercontent.com/36114589/188512155-c115a948-2966-4fed-b48e-eadcb65aaec1.PNG) 
+  
+When registering: 
+  
+![register](https://user-images.githubusercontent.com/36114589/188512264-08b4d796-028b-4691-9a39-6db931913b53.PNG) 
+ 
+## Future Implementation 
+
+* Allow registered users to delete their own account 
+* Build in in-app messaging feature, allowing users (businesses and consumers) to send private messages 
+* Chargeable Business Profile Features – set up an additional cost for registration  
+* FAQ Page – this will give potential clients answers to the most asked questions via a table with FAQs and dropdown buttons to view answers 
+* Add CAPTCHA to Contact Form – this will protect the site from being spammed  
+* GDPR Compliant Pop-Up Screen – this will ensure that the company complies with the EU data protection laws, by enabling visitors to the website to approve or deny the processing of their personal data 
+* Site Privacy Information – this will set out clear guidelines about what language restrictions there are in place, what behaviour is expected online and what actions will lead to accounts being blocked
 
 ## Technologies Used
 
@@ -201,22 +235,6 @@ This app/website is programmed in the following languages:
 • Heroku – where the live site is deployed 
 
 • Chrome - was used as the default testing browser 
-
-# Future Implementation
-
-• Allow registered users to delete their own account 
-
-• Build in in-app messaging feature, allowing users (businesses and consumers) to send private messages 
-
-• Chargeable Business Profile Features – set up an additional cost for registration  
-
-• FAQ Page – this will give potential clients answers to the most asked questions via a table with FAQs and dropdown buttons to view answers 
-
-• Add CAPTCHA to Contact Form – this will protect the site from being spammed  
-
-• GDPR Compliant Pop-Up Screen – this will ensure that the company complies with the EU data protection laws, by enabling visitors to the website to approve or deny the processing of their personal data 
-
-• Site Privacy Information – this will set out clear guidelines about what language restrictions there are in place, what behaviour is expected online and what actions will lead to accounts being blocked 
 
 ## Deployment & Local Development
 
@@ -286,7 +304,25 @@ Press Enter and your local clone will be created
 
 # Testing
 
+![html](https://user-images.githubusercontent.com/36114589/188511829-49db3cc9-018d-403a-9d5f-adcab5bf40f3.png)
+
+ The error above was fixed.
  
+ ![css-validaton](https://user-images.githubusercontent.com/36114589/188511876-811e3999-db27-4a12-bc22-a82d9d7b72a1.PNG)
+
+ No errors were found.
+ 
+ Create Post:
+ ![create-post](https://user-images.githubusercontent.com/36114589/188511971-e8cdc798-54bb-43aa-911f-7c85d5f26b60.PNG)
+
+ The color contrast issue was fixed
+ 
+ ![image](https://user-images.githubusercontent.com/36114589/188512034-bfb61257-9705-4f7e-9eaa-a3e864624f0c.png)
+
+ No JS errors were found:
+ 
+ ![js-validation](https://user-images.githubusercontent.com/36114589/188512067-23845082-124c-4402-a61c-9d2d1b57f58a.PNG)
+
  
  
 # Credits
