@@ -9,58 +9,74 @@
       <!-- end of login page nav -->
 
     <!-- login -->
-    <div class="login" style="margin: auto">
-        <div class="login-content">
-          <h2>Sign Up to Twister</h2>
-          <form action="register" method="post" class="login-form">
-            <input
-            id = "name"
-            name = "name"
-            type="text"
-            placeholder="Full Name"
-            class="login-user-info"
-          />
-            <input
-              id = "username"
-              name = "username"
-              type="text"
-              placeholder="username"
-              class="login-user-info"
-            />
-            <input
-              id = "email"
-              name = "email"
-              type="text"
-              placeholder="email"
-              class="login-user-info"
-            />
-            <input
-              id = "password"
-              name = "password"
-              type="password"
-              placeholder="Password"
-              class="login-password"
-            />
-            <input
-              id = "confirm_password"
-              name = "confirm_password"
-              type="password"
-              placeholder="Password"
-              class="login-password"
-            />
-            <div>
-              <button type="submit" class="login-form-btn">Sign Up</button>
-              <input type="checkbox" class="login-form-checkbox" id="check" />
-              <label for="check">Remember me</label>
-              <a href="#">Forgot password?</a>
-            </div>
-          </form>
-        </div>
-        <footer class="login-footer">
-          <p>New to Twister? <a href="./register">Sign up now</a></p>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+<div class="col-md-5">
+  <div class="login" style="margin: auto">
+    <div class="login-content">
+      <h2>Sign Up to Twister</h2>
+      {% with messages = get_flashed_messages() %}  
+      {% if messages %}  
+            {% for message in messages %}  
+                 <p>{{ message }}</p>  
+            {% endfor %}  
+      {% endif %}  
+    {% endwith %} 
+      <form action="register" method="post" class="login-form">
+        <input
+        id = "name"
+        name = "name"
+        type="text"
+        placeholder="Full Name"
+        class="login-user-info"
+      />
+        <input
+          id = "username"
+          name = "username"
+          type="text"
+          placeholder="username"
+          class="login-user-info"
+        />
+        <input
+          id = "email"
+          name = "email"
+          type="email"
+          placeholder="email"
+          class="login-user-info"
+        />
+        <input
+          id = "password"
+          name = "password"
+          type="password"
+          placeholder="Password"
+          class="login-password"
+        />
+        <input
+          id = "confirm_password"
+          name = "confirm_password"
+          type="password"
+          placeholder="Password"
+          class="login-password"
+        />
+        <div>
+          <button type="submit" class="login-form-btn">Sign Up</button>
+          <input type="radio" class="login-form-checkbox" value="is_business" name="is_business" id="is_business" />
+          <label for="is_business">Business Profile</label>
+          <input type="radio" class="login-form-checkbox" value="is_consumer" name="is_business" id="is_consumer" checked/>
+          <label for="is_consumer">Consumer Profile</label>
 
-        </footer>
+
+        </div>
+      </form>
+    </div>
+    <footer class="login-footer">
+      <p>New to Twister? <a href="./register">Sign up now</a></p>
+
+    </footer>
+  </div>
+</div>
       </div>
+    </div>
       <!-- end of login -->
 
    </body>

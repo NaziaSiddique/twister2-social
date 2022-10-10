@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+        {% block content %}
+        <style>
+
+.light-mode-button {
+  background: none;
+  border: 0;
+    color: #868383;
+  cursor: pointer;
+}
+
+
+.light-mode-button:focus {
+    outline: none; /* Not ideal for accessibility */
+}
+
+
+
+/* Light & Dark Mode Styles
+		--------------------------- */
+
+body {
+    background-color: #f6f6f6;
+    background: #f6f6f6;
+    transition: background-color 0.3s;
+}
+
+body[light-mode="dark"] {
+    background-color: #000;
+    background: rgb(45, 45, 45);
+    color: #fff;
+}
+
+
+body[light-mode="dark"] a {
+    color: #fff;
+}
+body[light-mode="dark"] .posts{
+  background-color: #000;
+}
+body[light-mode="dark"] .feeds-header,
+body[light-mode="dark"] .follow{
+  background-color: #000;
+  border: 1px solid #fff;
+}
+body[light-mode="dark"] .feeds-nav{
+  background-color: #000;
+  color: #fff;
+}
+body[light-mode="dark"] .w3-border-right{
+  background-color: #000;
+  color: #fff;
+}
+body[light-mode="dark"] .light-mode-button{
+  color: #fff;
+}
+body[light-mode="dark"] .follow-footer ul{
+  background: rgb(45, 45, 45);
+
+}
+        </style>
+<html lang="en">
+  <body>
+    <div class="sidebar w3-sidebar w3-bar-block w3-border-right" style="right:0; display: none;" id="sidebar">
+
+      <div class="sidebar-header justify-content-between">
+        <h2 class="light-text">Account info</h2>
+           <button onclick="hideSidebar()" class="border-0" style="background-color: transparent;" > <i class="fas fa-times"></i></button>
+      </div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-img">
+          <img src="{{ user_image }}">
+        </div>
+        <!-- <span>+</span> -->
+      </div>
+      <div class="sidebar-user-info light-text">
+        <h4>{{ name }}</h4>
+        <p>@{{ username}}</p>
+      </div>
+      <div class="following light-text">
+        <p class="following-paragraph"><span>{{ followers|length }}</span> Following</p>
+        <p class="following-paragraph"><span>{{ following|length }}</span> Followers</p>
+      </div>
+
+      <div class="sidebar-list-1 border-0">
+        <ul class="p-0">
+          <li>
+            <a href="/myprofile"> <i class="fas fa-user"></i> Profile </a>
+          </li>
+          <!-- <li>
+            <a href="#"> <i class="far fa-list-alt"></i> Lists <span>(Coming Soon)</span></a>
+          </li> -->
+          <li>
+            <a href="#"> <i class="far fa-bookmark"></i> Bookmarks <span>(Coming Soon)</span></a>
+          </li>
+          <!-- <li> -->
+            <!-- <a href="#"> <i class="fab fa-adversal"></i> Ads <span>(Coming Soon)</span></a>
+          </li>
+          <li>
+            <a href="#"> <i class="fas fa-chart-line"></i> Analytics <span>(Coming Soon)</span></a> -->
+          </li>
+          <li>
+            <a href="/changepassword"> <i class="fa fa-key" aria-hidden="true"></i> Password Change </a>
+          </li>
+          
+          <li class="mb-0">
+            <a href="/deleteaccount"> <i class="fa fa-trash" aria-hidden="true"></i> Delete Account </a>
+          </li>
+        </ul>
+      </div>
+      <hr/>
+      <div class="sidebar-list-2">
+        <ul class="p-0">
+          <li><a href="/logout"> Log Out</a></li>
+          <li>
+            <a href="#"> <i class="fa fa-star" aria-hidden="true"></i>
+              <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">Dark Mode</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+    <!-- end of sidebar -->
+
+  <!-- feeds nav -->
+  <nav class="feeds-nav dark-mode-1" style="top: 0;">
+        <div class="container d-flex justify-content-between">
+          <div class="icons">
+      <a href="/posts" class="active"><i class="fas fa-home"></i></a>
+      <!-- <a href="#"><i class="fas fa-hashtag"></i></a>
+      <a href="#"><i class="far fa-bell"></i></a>
+      <a href="#"><i class="far fa-envelope"></i></a> -->
+    </div>
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        placeholder="Search Twister"
+        class="search-bar-input dark-mode-2 light-text"
+      />
+    </div>
+    <div class="user">
+      <div class="user-img-wrapper">
+        <img src="{{ user_image }}">
+      </div>
+      <a href = "/myprofile" class="user-link light-text">{{ username }}</a>
+     <div style="    height: 17px;" onclick="showSidebar()"> <i class="fas fa-chevron-down"></i></div>
+    </div>
+    <!-- <div class="user">
+      <div class="user-img-wrapper">
+        <img src="" alt="user-img" />
+      </div>
+      <button type="button"  class="sidemenu" ><i class="fa fa-list"></i></button>
+
+    </div> -->
+        </div>
+  </nav>
+        <!-- end of feeds nav -->
+      <!-- feeds content -->
+
+    <div class="container mt-5">
+<div class="row pt-5">
+<div class="col-12 mt-4">
+  <form action="/post_new" method="post">
+    <div class="dark-mode-2">
+      <div class="feeds-header dark-mode-1">
+        <div class="header-top border">
+          <h4 class="light-text">{{userv.username}} Profile</h4>
+          <div>
+            <i class="far fa-star me-4"></i>
+          <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+ <i class="fa fa-share-alt"></i>
+</button>
+          </div>
+
+<!-- Modal -->
+<div class="share-icons modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share Links</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="sharethis-inline-share-buttons"></div>
+    </div>
+  </div>
+</div>
+        </div>
+        <!-- <div class="row p-4">
+            <div class="col-md-4">
+                <div>
+                    <img class="img-fluid" src="/static/images/user_images/{{profile.profilepic}}">
+                  </div>
+            </div> -->
+            <!-- self.id = id
+            self.user_id = user_id
+            self.profilepic = profilepic
+            self.name = name
+            self.username = username
+            self.address =address
+            self.email = email
+            self.contact_number = contact_number -->
+              {% if userv.is_business %}
+              <div class="row p-4">
+                <div class="col-md-4">
+                    <div>
+                        <img class="img-fluid" src="/static/images/user_images/{{profile.logo}}">
+                      </div>
+                </div>
+              <div class="col-md-6">
+                  <h5>Name :- <span>{{profile.name}}</span></h5>
+                  <h5>Address :- <span>{{profile.address}}</span></h5>
+                  <h5>Email :- <span>{{email}}</span></h5>
+                  <h5>URL :- <span>{{profile.url}}</span></h5>
+                  <h5>Social URL :- <span>{{profile.social_url}}</span></h5>
+                  <h5>Contact Number :- <span>{{profile.contact_number}}</span></h5>
+              </div>
+            {% else %}
+            <div class="row p-4">
+              <div class="col-md-4">
+                  <div>
+                      <img class="img-fluid" src="/static/images/user_images/{{profile.profilepic}}">
+                    </div>
+              </div>
+            <div class="col-md-6">
+              <h5>Name :- <span>{{name}}</span></h5>
+              <h5>Username :- <span>{{username}}</span></h5>
+              <h5>Email :- <span>{{email}}</span></h5>
+              <h5>Address :- <span>{{profile.address}}</span></h5>
+              <h5>Contact Number :- <span>{{profile.contact_number}}</span></h5>
+          </div>
+        </div>
+          {% endif %}
+            
+        </div>
+       
+      </div>
+      </div>
+      </form>
+
+</div>
+</div>
+    </div>
+       
+        <!-- end of feeds nav -->
+      <!-- feeds content -->
+
+      <!-- self.logo = logo
+      self.name = name
+      self.address =address
+      self.email = email
+      self.url = url
+      self.social_url = social_url
+      self.contact_number = contact_number -->
+
+        
+
+
+      <!-- sidebar on the right -->
+      <div class="sidebar-wrapper">
+        <div class="sidebar dark-mode-1">
+          <div class="sidebar-header border">
+            <i class="fas fa-times"></i>
+            <h4 class="light-text">Profile</h4>
+          </div>
+          <div class="sidebar-content">
+            <div class="sidebar-img">
+              <img src="assets/images/user1.jpg" />
+            </div>
+            <div class="sidebar-info">
+              <h4 class="light-text">{{ username }}</h4>
+              <p class="light-text">{{ name }}</p>
+              <p class="light-text">{{ email }}</p>
+            </div>
+            <div class="sidebar-icons">
+              <i class="fas fa-user-edit"></i>
+              <i class="fas fa-cog"></i>
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+   </body>
+
+   <script>
+    function showSidebar() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+    function hideSidebar() {
+      document.getElementById("sidebar").style.display = "none";
+    }
+
+    // Get the modal
+      var modal = document.getElementById("post-modal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("post-btn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+   
+  </script>
+
+</html>
+{% endblock %}

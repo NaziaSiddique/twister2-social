@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+        {% block content %}
+<html lang="en">
+  
+  <body>
+           <!-- sidebar -->
+           <div class="w3-sidebar w3-bar-block w3-border-right" style="width:20%;right:0;top:0;display:none;padding: 0 15px;box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);" id="sidebar">
+
+
+            <div class="sidebar-header border-0 justify-content-between mt-4">
+              <h2 class="light-text">Account info</h2>
+             <button onclick="hideSidebar()" class="close-icon" > <i class="fas fa-times"></i></button>
+            </div>
+            <hr/>
+
+           <div class="d-flex align-items-center mt-4">
+            <div class="header-img-wrapper">
+              <img src=" {{ user_image }}" alt="">
+            </div>
+
+            <div class="sidebar-user-info p-0 light-text">
+              <h4 class="mt-0">{{ name }}</h4>
+              <p class="mb-0">{{ username}}</p>
+            </div>
+           </div>
+
+            <div class="following light-text d-flex justify-content-between p-0 my-4">
+              <p class="following-paragraph close-icon mb-0 w-100"><span>{{ followers|length }}</span> Following</p>
+              <p class="following-paragraph close-icon mb-0 w-100"><span>{{ following|length }}</span> Followers</p>
+            </div>
+<hr/>
+            <div class="sidebar-list-1 border-0">
+              <ul class="p-0">
+                <li>
+                  <a href="/myprofile"> <i class="fas fa-user"></i> Profile </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="far fa-list-alt"></i> Lists </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="far fa-bookmark"></i> Bookmarks </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fab fa-adversal"></i> Ads </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fas fa-chart-line"></i> Analytics </a>
+                </li>
+                <li>
+                  <a href="/products"> <i class="fa fa-address-book" aria-hidden="true"></i> Products </a>
+                </li>
+                <li>
+                  <a href="/add_product"> <i class="fa fa-plus-square" aria-hidden="true"></i> Add Product </a>
+                </li>
+                <li>
+                  <a href="/changepassword"> <i class="fa fa-key" aria-hidden="true"></i> Password Change </a>
+                </li>
+                
+                <li>
+                  <a href="#"> <i class="fa fa-star" aria-hidden="true"></i>
+                    <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">Dark Moad</button>
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a href="/deleteaccount"> <i class="fa fa-trash" aria-hidden="true"></i> Delete Account </a>
+                </li>
+              </ul>
+            </div>
+            <hr/>
+            <div class="sidebar-list-2">
+              <ul class="p-0">
+                <li><a href="/logout"> Log Out</a></li>
+              </ul>
+            </div>
+        </div>
+        <!-- end of sidebar -->
+
+      <!-- feeds nav -->
+      <nav class="feeds-nav dark-mode-1" style="top: 0;">
+        <div class="icons">
+          <a href="#" class="active"><i class="fas fa-home"></i></a>
+          <a href="#"><i class="fas fa-hashtag"></i></a>
+          <a href="#"><i class="far fa-bell"></i></a>
+          <a href="#"><i class="far fa-envelope"></i></a>
+        </div>
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            placeholder="Search Twister"
+            class="search-bar-input dark-mode-2 light-text border"
+          />
+        </div>
+        <div class="user">
+          <div class="user-img-wrapper">
+            <img src="./static/images/user_images/default.jpg">
+          </div>
+          <a href = "/myprofile" class="user-link light-text">{{ username }}</a>
+          <button type="button"  class="sidemenu" onclick="showSidebar()"><i class="fa fa-list"></i></button>
+    
+        </div>
+      </nav>
+      <!-- end of feeds nav -->
+      <!-- feeds content -->
+
+      <form action="/post_new" method="post">
+      <div class="feeds-content dark-mode-2">
+        <div class="feeds-header dark-mode-1">
+          <div class="header-top border">
+            <h4 class="light-text">Home</h4>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="header-post dark-mode-1 border">
+            <div class="header-img-wrapper">
+              <img src="{{ user_image }}" />
+            </div>
+           
+            <input
+              type="text"
+              name="content"
+              placeholder="What's happening?"
+              class="dark-mode-2 light-text border"
+              style="margin-left:30px;size:50;"
+            />
+            <input type = "submit" name="submit" value="Post" class="button" style="margin-left:3px;max-width: 60px;">
+     
+          </div>
+        </div>
+        </div>
+        </form>
+
+
+
+
+        <div class="sidebar-wrapper">
+            <div class="sidebar dark-mode-1">
+              <div class="sidebar-header border">
+                <i class="fas fa-times"></i>
+                <h4 class="light-text">Profile</h4>
+              </div>
+              <div class="sidebar-content">
+                <div class="sidebar-img">
+                  <img src="assets/images/user1.jpg" />
+                </div>
+                <div class="sidebar-info">
+                  <h4 class="light-text">{{ username }}</h4>
+                  <p class="light-text">{{ name }}</p>
+                  <p class="light-text">{{ email }}</p>
+                </div>
+                <div class="sidebar-icons">
+                  <i class="fas fa-user-edit"></i>
+                  <i class="fas fa-cog"></i>
+                  <i class="fas fa-sign-out-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+    
+       </body>
+    
+       <script>
+        function showSidebar() {
+          document.getElementById("sidebar").style.display = "block";
+        }
+        function hideSidebar() {
+          document.getElementById("sidebar").style.display = "none";
+        }
+    
+        // Get the modal
+          var modal = document.getElementById("post-modal");
+    
+          // Get the button that opens the modal
+          var btn = document.getElementById("post-btn");
+    
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+    
+          // When the user clicks the button, open the modal 
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
+    
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+    
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+    
+      </script>
+    
+    </html>
+    {% endblock %}

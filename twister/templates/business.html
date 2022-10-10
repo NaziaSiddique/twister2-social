@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+        {% block content %}
+<html lang="en">
+
+  <body>
+      <!-- login page nav -->
+      {% include  "nav.html" %}
+      <!-- end of login page nav -->
+
+    <!-- login -->
+    <div class="container mt-5">
+      <div class="row justify-content-center ">
+        <div class="col-md-5">
+    <div class="login" style="margin: auto">
+        <div class="login-content">
+          <h2>Business Profile to Twister</h2>
+          <form action="business_profile" method="post" class="login-form" enctype="multipart/form-data">
+            <input
+            id = "logo"
+            name = "logo"
+            type="file"
+          />
+            <input
+            id = "name"
+            name = "name"
+            type="text"
+            placeholder="Business Name"
+            class="login-user-info"
+            required
+
+          />
+            <input
+              id = "address"
+              name = "address"
+              type="text"
+              placeholder="address"
+              class="login-user-info"
+            required
+            />
+            <input
+              id = "url"
+              name = "url"
+              type="text"
+              placeholder="url"
+              class="login-user-info"
+              required
+            />
+            <input
+              id = "social_url"
+              name = "social_url"
+              type="text"
+              placeholder="social_url"
+              class="login-user-info"
+              required
+            />
+            <input
+              id = "contact_number"
+              name = "contact_number"
+              type="number"
+              placeholder="contact_number"
+              class="login-user-info"
+              required
+            />
+            
+            <div>
+              <button type="submit" class="login-form-btn">Save & Next</button>
+
+            </div>
+          </form>
+        </div>
+        <footer class="login-footer">
+          <p>New to Twister? <a href="./business">Sign up now</a></p>
+
+        </footer>
+      </div>
+        </div></div></div>
+      <!-- end of login -->
+
+   </body>
+</html>
+{% endblock %}

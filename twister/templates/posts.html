@@ -1,206 +1,388 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
         {% block content %}
+        <style>
+.post-btn-header .post-botton{
+  width: unset !important;
+    height: unset;
+    background: #f55d11;
+    color: #fff;
+    border: 0;
+    padding: 8px 25px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.header-post .post-btn-header .post-input {
+  width:  4rem !important;
+  padding: 0;
+}
+
+.post-btn-header{
+ display: flex;
+}
+.follow-btn{
+  text-decoration: none;
+  text-align: center;
+}
+.post-btn-header .post-img-1{
+  display: flex;
+}
+
+.fileUploadWrap {
+  position: relative;
+}
+.fileUploadWrap i {
+  position: absolute;
+  cursor: pointer;
+/*   below means you can click through the image onto the invisible input */
+  pointer-events: none;
+  width:auto;
+  top: 50%;
+  transform: translatey(-50%);
+}
+.fileName {
+  position: absolute;
+  left: 50px;
+  top: -8px;
+  pointer-events: none;
+}
+.post-input[type=file] {
+  opacity: 0;
+}
+
+        </style>
 <html lang="en">
   <body>
           <!-- sidebar -->
-          <div class="w3-sidebar w3-bar-block w3-border-right" style="width:20%;right:0;top:5%;display:none" id="sidebar">
+          <div class="sidebar w3-sidebar w3-bar-block w3-border-right" style="right:0; display: none;" id="sidebar">
 
+            <div class="sidebar-header justify-content-between">
+              <h2 class="light-text">Account info</h2>
+                 <button onclick="hideSidebar()" class="border-0" style="background-color: transparent;" > <i class="fas fa-times"></i></button>
+            </div>
+            <div class="sidebar-user">
+              <div class="sidebar-user-img">
+                <img src="{{ user_image }}">
+              </div>
+              <!-- <span>+</span> -->
+            </div>
+            <div class="sidebar-user-info light-text">
+              <h4>{{ name }}</h4>
+              <p>@{{ username}}</p>
+            </div>
+            <div class="following light-text">
+              <p class="following-paragraph"><span>{{ followers|length }}</span> Following</p>
+              <p class="following-paragraph"><span>{{ following|length }}</span> Followers</p>
+            </div>
 
-              <div class="sidebar-header border">
-                <h2 class="light-text">Account info</h2>
-                &nbsp; <button onclick="hideSidebar()" class="fas fa-times"></button>
-              </div>
-
-              <div class="header-img-wrapper">
-                <img src=" {{ user_image }}" alt="">
-              </div>
-
-              <div class="sidebar-user-info light-text">
-                <h4>{{ name }}</h4>
-                <p>{{ username}}</p>
-              </div>
-
-              <div class="following light-text">
-                <p class="following-paragraph"><span>{{ followers|length }}</span> Following</p>
-                <p class="following-paragraph"><span>{{ following|length }}</span> Followers</p>
-              </div>
-
-              <div class="sidebar-list-1 border">
-                <ul>
-                  <li>
-                    <a href="#"> <i class="fas fa-user"></i> Profile </a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="far fa-list-alt"></i> Lists </a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="far fa-bookmark"></i> Bookmarks </a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="fab fa-adversal"></i> Ads </a>
-                  </li>
-                  <li>
-                    <a href="#"> <i class="fas fa-chart-line"></i> Analytics </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="sidebar-list-2">
-                <ul>
-                  <li><a href="/logout">Log Out</a></li>
-                </ul>
-              </div>
-          </div>
+            <div class="sidebar-list-1 border-0">
+              <ul class="p-0">
+                <li>
+                  <a href="/myprofile"> <i class="fas fa-user"></i> Profile </a>
+                </li>
+                <li>
+                  <a href="#"> <i class="far fa-list-alt"></i> Lists <span>(Coming Soon)</span></a>
+                </li>
+                <li>
+                  <a href="#"> <i class="far fa-bookmark"></i> Bookmarks <span>(Coming Soon)</span></a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fab fa-adversal"></i> Ads <span>(Coming Soon)</span></a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fas fa-chart-line"></i> Analytics <span>(Coming Soon)</span></a>
+                </li>
+                <li>
+                  <a href="/mypost"><i class="fa fa-book" aria-hidden="true"></i> My Posts </a>
+                </li>
+                <li>
+                  <a href="/products"> <i class="fa fa-address-book" aria-hidden="true"></i> Products </a>
+                </li>
+                <li>
+                  <a href="/changepassword"> <i class="fa fa-key" aria-hidden="true"></i> Password Change </a>
+                </li>
+                
+                <li class="mb-0">
+                  <a href="/deleteaccount"> <i class="fa fa-trash" aria-hidden="true"></i> Delete Account </a>
+                </li>
+              </ul>
+            </div>
+            <hr/>
+            <div class="sidebar-list-2">
+              <ul class="p-0">
+                <li><a href="/logout"> Log Out</a></li>
+                <li>
+                  <a href="#"> <i class="fa fa-star" aria-hidden="true"></i>
+                    <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">Dark Mode</button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
           <!-- end of sidebar -->
 
         <!-- feeds nav -->
-        <nav class="feeds-nav dark-mode-1">
+        <nav class="feeds-nav dark-mode-1" style="top: 0;">
+        <div class="container d-flex justify-content-between">
           <div class="icons">
-            <a href="#" class="active"><i class="fas fa-home"></i></a>
-            <a href="#"><i class="fas fa-hashtag"></i></a>
+            <a href="/posts" class="active"><i class="fas fa-home"></i></a>
+            <!-- <a href="#"><i class="fas fa-hashtag"></i></a>
             <a href="#"><i class="far fa-bell"></i></a>
-            <a href="#"><i class="far fa-envelope"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a> -->
           </div>
           <div class="search-bar">
             <i class="fas fa-search"></i>
             <input
               type="text"
               placeholder="Search Twister"
-              class="search-bar-input dark-mode-2 light-text border"
+              class="search-bar-input dark-mode-2 light-text"
             />
           </div>
           <div class="user">
             <div class="user-img-wrapper">
-              <img src="{{ user_image }}" alt="user-img" />
+              <img src="{{ user_image }}">
             </div>
-            <a href = "./profile" class="user-link light-text">{{ username }}</a>
-            <button type="button" onclick="showSidebar()"><i class="fas fa-chevron-down"></i></button>
+            <a href = "/myprofile" class="user-link light-text">{{ username }}</a>
+           <div style="    height: 17px;" onclick="showSidebar()"> <i class="fas fa-chevron-down"></i></div>
+          </div>
+          <!-- <div class="user">
+            <div class="user-img-wrapper">
+              <img src="" alt="user-img" />
+            </div>
+            <button type="button"  class="sidemenu" ><i class="fa fa-list"></i></button>
       
+          </div> -->
           </div>
         </nav>
         <!-- end of feeds nav -->
       <!-- feeds content -->
 
-      <form action="/post_new" method="post">
-      <div class="feeds-content dark-mode-2">
-        <div class="feeds-header dark-mode-1">
-          <div class="header-top border">
-            <h4 class="light-text">Home</h4>
+    <div class="container mt-5 pb-5 pb-md-0">
+<div class="row justify-content-center pt-5 pb-5 pb-md-0">
+<div class="col-md-6 pb-5 pb-md-0">
+    <div class="dark-mode-2">
+      <div class="feeds-header dark-mode-1">
+        <div class="header-top">
+          <h4 class="light-text">Home</h4>
+          <div>
             <i class="far fa-star"></i>
+          <!-- Button trigger modal -->
+
           </div>
-          <div class="header-post dark-mode-1 border">
-            <div class="header-img-wrapper">
-              <img src="{{ user_image }}" />
-            </div>
-           
-            <input
-              type="text"
-              name="content"
-              placeholder="What's happening?"
-              class="dark-mode-2 light-text border"
-              style="margin-left:30px;size:50;"
-            />
-            <input type = "submit" name="submit" value="Post" class="button" style="margin-left:3px;max-width: 60px;">
-     
+
+        </div>
+        <div class="header-post dark-mode-1">
+          <div class="header-img-wrapper">
+            <img src= "{{ user_image }}">
           </div>
-        </div>
-        </div>
-        </form>
+          <form action="/post_new" class="d-flex align-items-center" method="post" enctype="multipart/form-data">
+          <input type="text" placeholder="What's happening?" name="content" class="dark-mode-2 light-text" required/>
+          <div class="post-btn-header">
+            <!-- <div class="post-img-1 me-2">
 
-        <div class="posts dark-mode-1">
-          {%for post in posts %}
-          <div class="post border">
-            <div class="user-avatar">
-              <img src="{{ post.image_file }}" />
-            </div>
-            <div class="post-content">
-              <div class="post-user-info light-text">
-                <h4>{{ post.name }}</h4>
-                <i class="fas fa-check-circle"></i>
-                <span>{{ post.username }} {{ post.date_posted }}</span>
-              </div>
-              <p class="post-text light-text">
-                {{ post.content }}
-              </p>
-
-              {% if post.post_image[-1] != "-" %}
-                <div class="post-img">
-                  <img src="{{ post.post_image }}" />
-                </div>
-              {%endif %}
-              <div class="post-icons">
-                <i class="far fa-comment">{{ post.comments|length }}</i>
-                &nbsp; &nbsp;
-                <button onclick="location.href='/post/{{ post.id }}/like'" type="button" formmethod="post" class="far fa-heart">{{ post.likes }}</button>
-                &nbsp; &nbsp;
-                <i class="fas fa-retweet"></i>
-              </div>
-
-              <form action="/post/{{ post.id }}/comment" method="post">
-                <input type="text" name="comment" placeholder="Add a comment..." class="dark-mode-2 light-text border" />
-                <input type="submit" name="submit" value="Comment" class="button" style="background-color: #f2641d;color: white;size:50px;border-radius: 20px; min-width: 100px;" />
-              </form>
- 
-
-              <br>
-              {% set latest_comment = post.comments[-1] %}
-              {% if latest_comment %}
-                <div class="post-content" style="border: 1px solid #221f1f;border-radius: 12px;">
-                  <div class="post-header">
-                    <span style="color:rgb(104, 98, 96)">{{ latest_comment.username }} : {{ latest_comment.date_posted }}</span>
-                  </div>
-                  <p class="comment-text light-text">
-                    {{ latest_comment.content }}
-                  </p>
-                </div>
-              {%endif %}
-
-            </div>
+              <input type="file" class="far fa-image"/>
+            <input  type="file" class="post-input" name="post_image" required /> 
+            </div> -->
+             
+<div class="fileUploadWrap">
+  <i class="far fa-image m-0 mx-3"></i>
+  <input type="file" class="post-input" name="post_image" required>
+</div>
+          <input type = "submit" name="submit" value="Post" class="post-botton">
           </div>
-          {%endfor%}
+          </form>
+          
         </div>
-
-        <div class="follow dark-mode-1">
-          <h3 class="follow-heading light-text border">Who to follow</h3>
-
-          {% set unique_posts = [] %}
-          {%for post in posts[:10] %}
-          {%if post.username != username %}
-          {%if post.username not in unique_posts %}
-
-          {% set unique_posts = unique_posts.append(post.username) %}
-
-          <div class="follow-user border">
-            <div class="follow-user-img">
-              <img src=" {{ post.image_file }}" />
-            </div>
-            <div class="follow-user-info light-text">
-              <h4>{{ post.name }}</h4>
-              <p>{{ post.username }}</p>
-            </div>
-            <button onclick="location.href='/user/{{ post.username }}/follow'" type="button" formmethod="post" class="follow-btn light-text">Follow</button>
+        <!-- <div class="header-post dark-mode-1">
+          <div class="header-img-wrapper">
+            <img src="{{ user_image }}" />
           </div>
-          {%endif %}
-          {%endif %}
-          {%endfor%}
-
-          <footer class="follow-footer dark-mode-2">
-            <ul>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Cookies</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">More</a></li>
-            </ul>
-          </footer>
-        </div>
+          <input
+            type="text"
+            name="content"
+            placeholder="What's happening?"
+            class="dark-mode-2 light-text"
+          />
+          <input type = "submit" name="submit" value="Post" class="button" style="margin-left:3px;max-width: 60px;">
+        </div> -->
       </div>
+      </div>
+  <div class="dark-mode-1">
+    {%for post in posts %}
+    <div class="post bg-white">
+      <div class="user-avatar">
+        <img src="{{ post.image_file }}" />
+      </div>
+      <div class="post-content w-100">
+        <div class="post-user-info light-text">
+          <h4>{{ post.name }}</h4>
+          <div>
+            <i class="fas fa-check-circle"></i>
+          <span>{{ post.username }} {{ post.date_posted }}</span>
+          </div>
+        </div>
+        <p class="post-text light-text">
+          {{ post.content }}
+        </p>
+
+        {% if post.post_image[-1] != "-" %}
+          <div class="post-img w-100">
+            <img src="{{ post.post_image }}" />
+          </div>
+        {%endif %}
+        <div class="post-icons">
+          <i class="far fa-comment me-3"></i>{{ post.comments|length }}
+          
+           <button onclick="location.href='/post/{{ post.id }}/like'" type="button" formmethod="post" class="icons-1 mx-5"> <i class="far fa-heart me-3"></i>{{ postlike }}</button> 
+          <!-- <i class="fas fa-retweet me-5"></i> -->
+          <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa fa-share-alt me-0"></i>
+           </button>
+           <!-- Modal -->
+           <div class="share-icons modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel">Share Links</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="sharethis-inline-share-buttons"></div>
+               </div>
+             </div>
+           </div>
+        </div>
+
+        <form action="/post/{{ post.id }}/comment" class="mb-4" method="post">
+          <div class="d-flex justify-content-between mt-4">
+            <input type="text" name="comment" placeholder="Add a comment..." class="dark-mode-2 comment-input light-text border"required />
+          <input type="submit" name="submit" value="Comment" class="button comment-btn"required />
+          </div>
+        </form>
+        {% set latest_comment = post.comments[-1] %}
+        {% if latest_comment %}
+          <div class="post-content comment-bg">
+            <div class="post-header">
+              <span style="color:rgb(104, 98, 96)">{{ latest_comment.username }} : {{ latest_comment.date_posted }}</span>
+            </div>
+            <p class="comment-text light-text">
+              {{ latest_comment.content }}
+            </p>
+          </div>
+        {%endif %}
+
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+<div class="col-3 ">
+  <div class="follow dark-mode-1">
+    <h3 class="follow-heading light-text mt-0">Who to follow</h3>
+    {% for user in users %}
+    <div class="follow-user">
+      <div class="follow-user-img">
+        <img src="./static/images/user_images/{{user.image_file}}" alt="...."/>
+      </div>
+      <div class="follow-user-info light-text">
+        <h4>{{user.name}}</h4>
+        <p>{{user.username}}</p>
+      </div>
+      <a  href="/{{user.id}}/profile" class="follow-btn dark-mode-2">View</a>
+    </div>
+    
+    {% endfor %}
+    <!-- <div class="follow-link">
+      <a href="#">Show more</a>
+    </div> -->
+    {% set unique_posts = [] %}
+    {%for post in posts[:10] %}
+    {%if post.username != username %}
+    {%if post.username not in unique_posts %}
+
+    {% set unique_posts = unique_posts.append(post.username) %}
+
+    <!-- <div class="follow-user border">
+      <div class="follow-user-img">
+        <img src=" {{ post.image_file }}" />
+      </div>
+      <div class="follow-user-info light-text">
+        <h4>{{ post.name }}</h4>
+        <p>{{ post.username }}</p>
+      </div>
+      <button onclick="location.href='/user/{{ post.username }}/follow'" type="button" formmethod="post" class="follow-btn light-text">Follow</button>
+    </div> -->
+    
+    {%endif %}
+    {%endif %}
+    {%endfor%}
+
+  </div>
+</div>
+</div>
+    </div>
+        
+
+        
       <!-- end of feeds content -->
 
-      <button type="button" id="post-btn" class="post-btn">
-        +<i class="fas fa-feather-alt"></i> Post
-      </button>
+      
 
+     
+      <button type="button" class="post-btn add-product" data-bs-toggle="modal" data-bs-target="#AddProduct">
+        + Product
+       </button>
+       <!-- Modal -->
+       <div class="share-icons modal fade" id="AddProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+
+        
+              <form action="/add_product" method="post" enctype="multipart/form-data">
+                <div class="modal-body d-block">
+                   <div class="d-flex">
+                      <div class="modal-img">
+                      <img src="./static/images/user_images/default.jpg">
+                      </div>
+                      <div>
+                        <input
+                        type="text"
+                        name = "product_name"
+                        placeholder="product Name"
+                        class="modal-input dark-mode-2 light-text border"
+                        required
+                        style="    width: 20rem;
+                        padding: 10px;"
+                      />
+                      <input
+                        type="text"
+                        name = "product_desc"
+                        placeholder="product description"
+                        class="modal-input dark-mode-2 light-text border"
+                        required
+                        style="    width: 20rem;
+                        padding: 10px;"
+                      />
+                      </div>
+                      
+                    </div>
+                    <div class="modal-icons my-4">
+                      <i class="far fa-image"></i>
+                    <input type="file" name="product_image" required="">  
+                  </div>
+               
+              </div>
+                <div class="modal-footer">
+                  <input type = "submit" name="submit" value="Save" class="sidemenu px-5 text-white mt-4 py-3">
+                </div>
+              </div>
+              </form>
+           </div>
+         </div>
+       </div>
       <!-- comment modal -->
       <div id="comment-modal"  class="modal">
         <form action="/comment_new" method="post">
@@ -225,33 +407,80 @@
       </div>
       <!-- end of comment modal -->
 
+      <button type="button" id="post-btn" class="post-btn" data-bs-toggle="modal" data-bs-target="#PostModal">
+        +<i class="fas fa-feather-alt"></i> Post
+       </button>
+       
+       <!-- Modal -->
+       <div class="share-icons modal fade" id="PostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <form action="/post_new" method="post" enctype="multipart/form-data">
+              <div class="modal-body d-block">
+                <div class="d-flex">
+                  <div class="modal-img">
+                    <img src="{{ user_image }}" />
+                  </div>
+                  <input
+                    type="text"
+                    name = "content"
+                    placeholder="What's happening?"
+                    class="modal-input dark-mode-2 light-text border"
+                    required
+                  />
+                </div>
+                <div>
+                  <div class="modal-icons my-4">
+                      <i class="far fa-image m-0 mx-3"></i>
+                      <input type="file" name="post_image" required>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type = "submit" name="submit" value="Post" class="sidemenu px-5 text-white mt-4 py-3">
+                 
+              </div>
+              </form>
+           </div>
+         </div>
+       </div>
+      <!-- <button type="button" id="post-btn" class="post-btn">
+        +<i class="fas fa-feather-alt"></i> Post
+      </button> -->
       <!-- post modal -->
-      <div id="post-modal"  class="modal">
-        <form action="/post_new" method="post" enctype="multipart/form-data">
-          <div class="modal-header border">
-            <span class="close"><i class="fas fa-times"></i></span>
-            <input type = "submit" name="submit" value="Post" class="post-btn">
-          </div>
-          <div class="modal-body">
-            <div class="modal-img">
-              <img src="{{ user_image }}" />
-            </div>
-            <input
-              type="text"
-              name = "content"
-              placeholder="What's happening?"
-              class="modal-input dark-mode-2 light-text border"
-            />
+      <!-- <div id="post-modal"  class="modal">
+        <div >
 
-          </div>
-          <div class="modal-footer">
-            <div class="modal-icons">
-              <i class="far fa-image"></i>
+          <form action="/post_new" method="post" enctype="multipart/form-data">
+            <div class="modal-header border">
+              <span class="close"><i class="fas fa-times"></i></span>
+              <input type = "submit" name="submit" value="Post" class="post-btn">
             </div>
-            <input type="file" name="post_image" />  
-          </div>
-          </form>
-      </div>
+            <div class="modal-body">
+              <div class="modal-img">
+                <img src="{{ user_image }}" />
+              </div>
+              <input
+                type="text"
+                name = "content"
+                placeholder="What's happening?"
+                class="modal-input dark-mode-2 light-text border"
+              />
+  
+            </div>
+            <div class="modal-footer">
+              <div class="modal-icons">
+                <i class="far fa-image"></i>
+              </div>
+              <input type="file" name="post_image" />  
+            </div>
+            </form>
+        </div>
+      </div> -->
       <!-- end of post modal -->
 
       <!-- sidebar on the right -->
@@ -284,6 +513,11 @@
    </body>
 
    <script>
+
+
+
+
+
     function showSidebar() {
       document.getElementById("sidebar").style.display = "block";
     }
@@ -318,6 +552,17 @@
       }
 
   </script>
+<!-- <script>
+   $(document).on('change', ".fileUploadWrap input[type='file']",function(){
+        if ($(this).val()) {
 
+            var filename = $(this).val().split("\\");
+         
+            filename = filename[filename.length-1];
+
+            $('.fileName').text(filename);
+        }
+ });
+</script> -->
 </html>
 {% endblock %}

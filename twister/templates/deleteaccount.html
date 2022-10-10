@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+        {% block content %}
+<html lang="en">
+
+  <body>
+
+      <!-- login page nav -->
+      {% include  "nav.html" %}
+      <!-- end of login page nav -->
+      
+    <!-- login -->
+   <div class="container">
+<div class="row mt-5 justify-content-center">
+<div class="col-md-5">
+  <div class="login" style="margin: auto">
+    <div class="login-content">
+      <h2>Delete My Account</h2>
+      {% with messages = get_flashed_messages() %}  
+  {% if messages %}  
+        {% for message in messages %}  
+             <p>{{ message }}</p>  
+        {% endfor %}  
+  {% endif %}  
+{% endwith %}  <br>
+      <form action="/deleteaccount" method="post" class="login-form">
+
+        <input
+        id = "password"
+        name = "password"
+        type="password"
+        placeholder="Password"
+        class="login-password"
+        required
+      />
+    
+        <div>
+          <button type="submit" class="login-form-btn">Delete</button>
+
+        </div>
+      </form>
+    </div>
+    <footer class="login-footer">
+      <p>New to Twister? <a href="./register">Sign up now</a></p>
+
+    </footer>
+  </div>
+</div>
+</div>
+   </div>
+      <!-- end of login -->
+
+   </body>
+</html>
+{% endblock %}

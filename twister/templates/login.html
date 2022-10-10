@@ -10,37 +10,50 @@
       <!-- end of login page nav -->
 
     <!-- login -->
-    <div class="login" style="margin: auto">
-        <div class="login-content">
-          <h2>Log in to Twister</h2>
-          <form action="login" method="post" class="login-form">
-            <input
-              id = "username"
-              name = "username"
-              type="text"
-              placeholder="username"
-              class="login-user-info"
-            />
-            <input
-              id = "password"
-              name = "password"
-              type="password"
-              placeholder="Password"
-              class="login-password"
-            />
-            <div>
-              <button type="submit" class="login-form-btn">Log in</button>
-              <input type="checkbox" class="login-form-checkbox" id="check" />
-              <label for="check">Remember me</label>
-              <a href="#">Forgot password?</a>
-            </div>
-          </form>
+    <div class="contanier">
+<div class="row justify-content-center">
+<div class="col-md-3">
+  <div class="login mt-5" style="margin: auto">
+    <div class="login-content">
+      <h2>Log in to Twister</h2>
+      <form action="login" method="post" class="login-form">
+        <input
+          id = "username"
+          name = "username"
+          type="text"
+          placeholder="username"
+          class="login-user-info"
+          required
+        />
+        <input
+          id = "password"
+          name = "password"
+          type="password"
+          placeholder="Password"
+          class="login-password"
+          required
+        />
+        <div class="d-flex mt-2 justify-content-between">
+          <div class="mt-0">
+          <input type="checkbox" class="login-form-checkbox" id="check" />
+          <label for="check">Remember me</label>
+          </div>
+          <a href="#">Forgot password?</a>
         </div>
-        <footer class="login-footer">
-          <p>New to Twister? <a href="./register">Sign up now</a></p>
+        <div>
+          <button type="submit" class="login-form-btn py-3 px-5">Log in</button>
+          
+        </div>
+      </form>
+    </div>
+    <footer class="login-footer">
+      <p>New to Twister? <a href="./register">Sign up now</a></p>
 
-        </footer>
-      </div>
+    </footer>
+  </div>
+</div>
+</div>
+    </div>
       <!-- end of login -->
 
    </body>
