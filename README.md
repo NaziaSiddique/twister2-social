@@ -345,6 +345,8 @@ All the Standard CRUD data manipulation is handled using a nonrelational-backed 
 - Some features have had to be removed due to not working any mre such as the hash tag search
 - The site is not finished/polished the way I originally intednded it to look. Draft 1 which was just the front end, looked like this: https://github.com/NaziaSiddique/project3 Which is what I wanted this website to look like.
 - The deployment was done in Heroku, a few days ago, however, it seems to stop working from time to time and then starts working again.
+- The language is currently set to English and will be developed at a later stage.
+- 
 
 ## Technologies Used
 
