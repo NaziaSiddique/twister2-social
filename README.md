@@ -374,6 +374,7 @@ All the Standard CRUD data manipulation is handled using a nonrelational-backed 
 - The deployment was done in Heroku, a few days ago, however, it seems to stop working from time to time and then starts working again.
 - The language is currently set to English and will be developed at a later stage.
 - Sometimes when I click on post, it dosent post unless I press ENTER on my keyboard.
+- The follow feature was not developed, so changed that to view profile instead.
 
 ## Technologies Used
 
