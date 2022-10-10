@@ -532,7 +532,7 @@ body {
 }
 
 .header-post input {
-  width: 35rem;
+  width: 22rem;
   height: 3rem;
   border: 0.1rem solid #d6e1e9;
   border-radius: 3rem;
@@ -663,6 +663,7 @@ body {
 .follow-btn {
   margin-left: auto;
   width: 9rem;
+  
   background-color: #fff;
   color: #f55d11;
   padding: 0.7rem 0.5rem;

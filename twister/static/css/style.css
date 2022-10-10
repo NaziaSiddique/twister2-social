@@ -1,4 +1,4 @@
-/* common styles */
+  /* common styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,18 @@
 html {
   font-size: 62.5%;
 }
-
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-weight: bold !important;
+  margin:  0;
+}
 body {
   background-color: #f0f8fd;
 }
 /* end of common styles */
-
+.modal {
+  height: auto;
+}
 /* main page */
 .main-page {
   width: 100%;
@@ -261,20 +267,13 @@ body {
 
 /* login */
 .login {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
   background-color: #fff;
-  width: 100rem;
-  display: grid;
-  grid-template-columns: 10rem 8fr;
-  grid-template-rows: 2fr 1fr;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .login-content {
-  grid-column: 2 / -1;
-  grid-row: 1 /2;
-  padding: 5rem 0 1rem 0;
+padding: 20px;
 }
 
 .login-content h2 {
@@ -282,13 +281,10 @@ body {
   margin-bottom: 3rem;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .login-form input:not(.login-form-checkbox) {
-  width: 30rem;
+  width: 100%;
   height: 3.5rem;
   margin-bottom: 1rem;
   border: 0.1rem solid #ddd;
@@ -331,22 +327,24 @@ body {
 }
 
 .login-footer {
-  grid-column: 1 / -1;
-  grid-row: 2 / -1;
+  padding: 6px 0;
   background-color: #edf3f7;
-  padding-left: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 2rem;
 }
 
 .login-footer p {
   font-size: 1.6rem;
-  font-weight: 300;
-  margin: 0.5rem 0;
+  font-weight: 500;
+  margin:  0;
 }
-
+.comment-bg{
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+  padding: 5px;
+}
+.post-content{
+  border:unset;
+  border-radius: unset;
+}
 .login-footer a {
   text-decoration: none;
   color: #f55d11;
@@ -533,12 +531,12 @@ body {
 }
 
 .header-post input {
-  width: 35rem;
-  height: 3rem;
+  width: 42rem;
+  height: 4rem;
   border: 0.1rem solid #d6e1e9;
   border-radius: 3rem;
   background-color: #d6e1e9;
-  padding: 0.4rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .header-post i {
@@ -609,6 +607,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
+  border: 1px solid #868383;
 }
 
 .post-icons {
@@ -623,8 +622,8 @@ body {
 
 .follow {
   position: fixed;
-  top: 8rem;
-  left: 57%;
+  top: 75px;
+  left: 60%;
   background-color: #fff;
   width: 35rem;
 }
@@ -632,7 +631,8 @@ body {
 .follow-heading {
   padding: 1rem;
   font-size: 1.8rem;
-  border-bottom: 0.1rem solid #eee;
+  border-bottom: 0.1rem solid #eee;    
+  font-weight: bold;
 }
 
 .follow-user {
@@ -741,8 +741,8 @@ body {
 .modal {
   width: 60rem;
   background-color: #fff;
-  position: absolute;
-  top: 25%;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1.5rem;
@@ -827,6 +827,7 @@ body {
   margin-right: 2rem;
   font-size: 2.7rem;
   color: #f55d11;
+  position: unset;
 }
 
 .modal-icons span {
@@ -1284,10 +1285,10 @@ body {
   }
 
   /* news feed page */
-  .user a,
+  /* .user a,
   .user i {
     display: none;
-  }
+  } */
 
   .header-post input {
     width: 27rem;
@@ -1346,7 +1347,7 @@ body {
   }
 
   .header-post {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .header-post input {
@@ -1392,7 +1393,7 @@ body {
   }
 
   .header-post input {
-    width: 16rem;
+    width: 25rem;
   }
 
   .header-post i {
@@ -1404,8 +1405,10 @@ body {
   }
 
   .post-btn {
-    left: 60%;
-  }
+    left: 4%;
+  }.add-product {
+    left: 70%!important;
+}
 
   
 }
@@ -1415,3 +1418,222 @@ body {
 }
 
 /* end of responsive */
+
+.sidemenu i{
+  color: #fff;
+}
+.sidemenu{
+  background-color: #f2641d;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  line-height: 1; 
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-list-1 a span{
+  color: #f55d11;
+  font-size: 13px;
+}
+.follow-box{
+  border: 1px solid #dee2e6;
+}
+
+.icons-1{
+  border: 0;
+  border-radius: 0;
+  background-color: unset;
+  padding: 0;
+  line-height: 0;
+  width: unset;
+  text-align: unset;
+}
+.close-icon{
+  border: 1px solid #f2641d;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  padding: 6px 12px;
+  line-height: 1;
+    text-align: center;
+}
+.comment-btn{
+  font-weight: 600;
+    display: inline-block;
+    background: #f2641d;
+    color: #fff;
+    font-size: 18px;
+    padding: 4px 14px;
+    border-radius: 50px;
+    border: 0;
+}
+.comment-input{
+  width: 100%;
+  padding: 6px 12px;
+  margin-right: 1rem;
+  border-radius: 3rem;
+}
+.share-icons.modal{
+     background-color: unset;
+}
+.sm_list a{
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.share-icons .modal-header button {
+    margin-left: unset;
+    width: 2rem;
+    padding: unset;
+    background-color: unset;
+    color: unset;
+    font-size: unset;
+    border: unset;
+    border-radius:unset;
+    opacity: unset;
+}
+.add-product{
+  width: auto;
+    display: inline-block;
+    text-decoration: none;
+    left: 76%;
+
+}.post-btn{
+  padding: 10px 10px;
+}
+.add-product:hover{
+  color: #fff;
+}.light-mode-button {
+  background: none;
+  border: 0;
+  color: #868383;
+  cursor: pointer;
+}
+.card-img{
+  height: 200px;
+  overflow: hidden;
+}
+.card-body a{
+  text-decoration: none;
+  padding: 8px 20px 4px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-icons input[type="file"] {
+  background: #f9f9f9;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+
+
+.light-mode-button {
+  background: none;
+  border: 0;
+    color: #868383;
+  cursor: pointer;
+}
+
+
+.light-mode-button:focus {
+    outline: none; /* Not ideal for accessibility */
+}
+
+
+
+/* Light & Dark Mode Styles
+		--------------------------- */
+
+
+body[light-mode="dark"] {
+    background-color: #000;
+    background: rgb(45, 45, 45);
+    color: #fff;
+}
+
+
+body[light-mode="dark"] a {
+  color: #fff;
+}
+#st-1 .st-total {
+  display: none !important;
+}
+#st-1 .st-btn[data-network='twitter'],
+#st-1 .st-btn[data-network='facebook'],
+#st-1 .st-btn[data-network='linkedin'],
+#st-1 .st-btn[data-network='gmail'],
+#st-1 .st-btn[data-network='skype'],
+#st-1 .st-btn[data-network='whatsapp']{
+  background-color: transparent !important;
+}
+body[light-mode="dark"] .posts{
+  background-color: #000;
+}
+body[light-mode="dark"] .feeds-header,
+body[light-mode="dark"] .follow{
+  background-color: #000;
+  border: 1px solid #fff;
+}
+body[light-mode="dark"] .feeds-nav{
+  background-color: #000;
+  color: #fff;
+}
+body[light-mode="dark"] .w3-border-right{
+  background-color: #000;
+  color: #fff;
+}
+body[light-mode="dark"] .light-mode-button{
+  color: #fff;
+}
+body[light-mode="dark"] .bg-white{
+  background: rgb(0, 0, 0) !important;
+
+}
+body[light-mode="dark"] .close-icon{
+  background: rgb(255, 255, 255) !important;
+color: #000;
+}
+body[light-mode="dark"] .login{
+  background: rgb(0, 0, 0) !important;
+color: rgb(255, 255, 255);
+}
+body[light-mode="dark"] .login-footer{
+  background: rgb(77, 77, 77) !important;
+color: rgb(255, 255, 255);
+}
+body[light-mode="dark"] .login-page-nav{
+  background: rgb(0, 0, 0) !important;
+color: rgb(255, 255, 255);
+}
+body[light-mode="dark"] .follow-footer ul{
+  background: rgb(45, 45, 45);
+}
+body[light-mode="dark"] .modal-content{
+  background: rgb(45, 45, 45);
+  color: #fff !important;
+}
+body[light-mode="dark"] .card{
+  background: rgb(0, 0, 0);
+  color: #fff !important;
+}
+.icons-1{
+  color: #000;
+}
+.logo{
+  width: 60px;
+}
+.logo-nav{
+  width: 25px;
+}
+@media(max-width:575px){
+  .sidebar {
+    width: 22rem;
+    padding: 2rem;
+}.sidebar-list-1 i {
+  margin-right: .5rem;
+}.sidebar-list-1 a {
+  font-size: 1.3rem;
+}.sidebar-list-1 a span {
+  font-size: 11px;
+}
+}
