@@ -125,6 +125,33 @@ I want to be able to:
 
 # Design
 
+# Wireframes
+
+Sign up
+
+![Business Profile Sign Up](https://user-images.githubusercontent.com/36114589/194953510-aa325bec-ee19-4749-9491-d6d97ffb529b.png)
+
+![Consumer Sign Up Page](https://user-images.githubusercontent.com/36114589/194953532-9e58e5b4-9661-4907-83b4-4c8afbb54432.png)
+
+![Sign Up Page](https://user-images.githubusercontent.com/36114589/194953703-82fb995d-1de8-4f1e-b6a0-89b2a268ed52.png)
+
+Home Page
+
+![Home Page_Main Feed](https://user-images.githubusercontent.com/36114589/194953584-f1c5283a-d3df-4515-ab4a-ca2be9cc064b.png)
+
+Landing Page
+
+![Landing Page](https://user-images.githubusercontent.com/36114589/194953623-3542c9e4-c87d-4eb0-97c9-2a8904137a0a.png)
+
+Log In Page
+
+![Log In Page](https://user-images.githubusercontent.com/36114589/194953764-b53bc4df-3ae2-4bf6-8c23-2ef1f0b68622.png)
+
+Mobile Landing Page
+
+![Mobile Landing Page](https://user-images.githubusercontent.com/36114589/194953816-d7b3bd04-0236-4b89-8487-2b4b589773b3.png)
+
+
 # Features
 
 Existing Features Overview (Non-Registered Users) 
