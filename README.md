@@ -127,8 +127,6 @@ I want to be able to:
 
 # Features
 
-Features 
-
 Existing Features Overview (Non-Registered Users) 
 
  
