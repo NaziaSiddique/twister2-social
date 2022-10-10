@@ -5,20 +5,22 @@ from flask_login import LoginManager, login_user, logout_user, current_user, log
 
 # MODELS
 class User(db.Model, UserMixin):
-    def __init__(self, id, name,username, email, password, image_file):
+    def __init__(self, id, name,username, email, password, image_file, is_business):
         self.id = id
         self.name = name
         self.username = username
         self.email = email
         self.password = password
         self.image_file = image_file
+        self.is_business = is_business  
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), unique=True, nullable=False)
-    username = db.Column(db.String(20), unique=True, nullable=False)
+    name = db.Column(db.String(200), unique=True, nullable=False)
+    username = db.Column(db.String(200), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+    password = db.Column(db.String(200), nullable=False)
+    image_file = db.Column(db.String(200), nullable=False, default='default.jpg')
+    is_business = db.Column(db.Boolean, nullable=False)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
@@ -102,3 +104,50 @@ class Retweet(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
     def __repr__(self):
         return f"Retweet('{self.user_id}', '{self.post_id}')"
+
+class Business_Profile(db.Model):   
+    def __init__(self, id,user_id, name,logo,address,url,social_url, contact_number ):
+        self.id = id
+        self.user_id = user_id
+        self.logo = logo
+        self.name = name
+        self.address =address
+        self.url = url
+        self.social_url = social_url
+        self.contact_number = contact_number
+        # self.password = password
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    logo =db.Column(db.String(500), nullable=False, default='default.jpg')
+    name = db.Column(db.String(200), unique=True, nullable=False)
+    address = db.Column(db.String(200), unique=True, nullable=False)
+    url = db.Column(db.String(200), nullable=False)
+    social_url = db.Column(db.String(200), nullable=False)
+    contact_number = db.Column(db.Integer(), nullable = False)
+    # password = db.Column(db.String(20), nullable=False)
+
+class Consumer(db.Model):   
+    def __init__(self, id,user_id,profilepic,address,contact_number ):
+        self.id = id
+        self.user_id = user_id
+        self.profilepic = profilepic
+        self.address =address
+        self.contact_number = contact_number
+        # self.password = password
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    profilepic =db.Column(db.String(500), nullable=False, default='default.jpg')
+    address = db.Column(db.String(200), unique=True, nullable=False)
+    contact_number = db.Column(db.Integer(), nullable = False)
+    # password = db.Column(db.String(20), nullable=False)
+# class Product(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     bussiness_profile_id=db.Column(db.Integer, db.ForeignKey('business__profile.id'), nullable=False)
+#     name=db.Column(db.String(20), nullable=False)
+#     img=db.Column(db.String(20), nullable=False, default='default.jpg')
+#     descriptions=db.Column(db.String(250), nullable=False)
+
+#     # Column('person_id', Integer, ForeignKey(tbl_person.c.id), primary_key=True)
+#     # # business_profile
