@@ -2,7 +2,7 @@
 
 <img width="905" alt="Screenshot 2022-09-05 at 20 36 22" src="https://user-images.githubusercontent.com/36114589/188505848-0e0b41b3-58b4-4ef3-9b7f-8b0dec1d61ed.png">
 
-Twister is a social media platform, similar to Twitter, specifically to connect businesses with their end users. Business owners and consumers can register for a free account, share, manage, re-post other users post (twist and re-twist!), as well as creating and managing their own social profile online. The focus being to create a focussed and transparent conversation/link between business-to-business owners, business-to-consumers and consumers-to-consumers. 
+Twister is a social media platform, similar to Twitter, specifically to connect businesses with their end users. Business owners and consumers can register for a free account, share, manage, re-post other users post (twist and re-twist!), as well as creating and managing their own social profile online. The focus being to create a focussed and transparent conversation/link between business-to-business owners, business-to-consumers, and consumers-to-consumers.  
 
 [Link to the deployed project](https://twister-social.herokuapp.com/)
 
@@ -14,7 +14,7 @@ Twister is a social media platform, similar to Twitter, specifically to connect 
 
 •	Standard CRUD data manipulation i.e., user posts, re-posts etc is handled using a nonrelational-backed database: MongoDB using Flask+PyMongo 
  
-Twister is the third and my personal favourite project created for the Code Institute’s Level 5 Diploma in Web Application Development (Full Stack Software Development). To make an app to rival Twitter’s was very challenging, but something I felt confident I could take on. Twitter is my most used social media platform, with some great features that I really wanted to incorporate into Twister. Features including the ability to re-post, follow live conversations, chime in on existing threads, scroll through timelines, explore what’s trending using hashtags on topics that matter to the user, join communities, track what’s happening around the business world and find a platform to voice consumer opinions/reviews on the latest gadgets and products. The Twister app also allows users to build their own customisable profiles, add a profile picture, description, location, and a background photo.  
+Twister is the third and my personal favourite project created for the Code Institute’s Level 5 Diploma in Web Application Development (Full Stack Software Development). To make an app to rival Twitter’s was very challenging, but something I felt confident I could take on. Twitter is my most used social media platform, with some great features that I really wanted to incorporate into Twister. Features including the ability to re-post, follow live conversations, chime in on existing threads, scroll through timelines, explore what’s trending using hashtags on topics that matter to the user, join communities, track what’s happening around the business world and find a platform to voice consumer opinions/reviews on the latest gadgets and products. The Twister app also allows users to build their own customisable profiles, add a profile picture, description, location, and a background photo.   
 
 
 # User Experience
@@ -111,19 +111,11 @@ I want to be able to:
 
 • Be able to view trending posts/hashtags easily 
 
-• Be able to comment on conversation threats 
-
-• Be able to join communities/group that I am interested in 
-
 • Be able to follow other users/business profiles/groups/posts 
-
-• Be forewarned on any activity that I am about to do on the app, such as deleting posts, or re-posting images etc.  
 
 • Have my own member user dashboard (read functionality) 
 
 • Registered User Goals (Businesses) 
-
-• Have all the features available to Consumers 
 
 • Have a business login/registration page 
 
@@ -131,38 +123,157 @@ I want to be able to:
 
 • Be able to get verified business status  
 
-• Have a business dashboard with the relevant analytical features useful for marketing 
-
 # Design
 
 # Features
 
-Landing Page: the landing page of the website features a orange modar with three lines of text in white describing what the site can be used for. The right-hand side of the landing page is white and split down the middle to separate it from the orange modar. The top right-hand   side of the landing page consists of two data inputting boxes, one for username and one for password. Right next to the boxes there’s a white and orange ‘Log in’, which allows users to log in to the site. There’s also a Forgotten Password? hyperlink under the boxes, which will navigate to another page on the site to allow users to reset their passwords. Towards the middle of the right-hand side of the landing page, the orange logo is featured, with the site tagline ‘Explore what’s happening in the world of business’, followed by ‘Join Twister Today’. There are two call to action buttons ‘Sign up’ and ‘Log In’, which will navigate users to the relevant pages to access the site.  
-At the bottom of the page, there are several pages that are hyperlinked to various information-based pages that can be accessed without registering. These pages are: About, Blog, Help, Terms, Apps, Settings, Contact, Status, Privacy Policy, Brand, Developers as well as a copyright logo.  
-The colours used on the landing page reflect the branding that is used consistently throughout the website: orange, white and black. The logo is also featured on every page once the user enters the site.  
- All call-to-action buttons that link to a different page of the website and are fully responsive on both desktop mobile/tablet devices.  
-Paragraph locked by Zahra Gillani
- 
- 
-Log In Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Log in to Twister’, followed by two log-in boxes; one for the username and one for the password. This is followed by an orange call to action ‘Log In’ button and a check box feature to ‘Remember Me’ to save username and password, as well as a ‘Forgot Password?’ hyperlink to reset password. In smaller text there’s also the option for new users to the site, with the hyperlink option to ‘Sign up now’, which will re-navigate users to the Sign Up page.  
- 
-Sign Up Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Sign Up to Twister’, followed by boxes to input the following data fields: full name, username, email, Password and Repeat Password. This is followed by an orange call to action ‘Sign Up’ button and a check box feature Remember Me’ to save username and password. 
+Features 
 
-## Existing Features 
+Existing Features Overview (Non-Registered Users) 
+
  
-* Header Logo - Exists on every page and allows all users to easily navigate back to the home page by clicking on it 
+
+Header Logo - Exists on every page and allows all users to easily navigate back to the home page by clicking on it 
+
  
-* Header Navigation Bar – Visible on every page and allows all users to easily navigate from page to page on the website and find what they are looking for quickly 
+
+Header Navigation Bar –Not visible on the landing page, but if users navigate away from it to other pages, it will appear and  will allow all users to easily navigate from any page back to the landing page 
+
  
-* Footer Contact Details – Each page has phone contact details and company address 
+
+Call to Action Buttons – This feature is available on the landing page, where potential users can click on either the ‘Sign Up’ or ‘Log In’ buttons to access the Twister site itself after signing up/logging in 
+
  
-* Footer Social Icons - Exist on every page and allows all users to access the social platforms that the company uses by clicking the icons 
+
+Sign Up Page – Allows users to sign up as either a Business or Consumer Profile 
+
  
-* Call to Action Buttons - This feature is available on the Homepage and the Contact Us page, where potential clients can fill out a contact form to get in touch with the accounting company to start the process of hiring them or finding out more information about the services 
+
+Log In Page – Allows existing users to log in using their credentials. The site has the ability for users to click the ‘Remember Me’ check box for faster log ins 
+
  
-* About Us Page - Allows potential clients to quickly get an overview of the company and its values; a small About Us section is also visible on the Homepage of the website 
+
+About Page - Allows potential clients to quickly get an overview of the website, visible on the ‘Sign Up’ and ‘Log In’ pages 
+
  
-* Contact Form - Allows potential clients to ask questions, and/or make the first step in hiring the Accounting Firm. The detailed form on the Contact Us page also allows potential clients to add additional information on what services they are looking for based on what kind of organisation they are running 
+
+*Landing Page: the landing page of the website features a orange modar with three lines of text in white describing what the site can be used for. The right-hand side of the landing page is white and split down the middle to separate it from the orange modar. Towards the middle of the right-hand side of the landing page, the orange logo is featured, with the site tagline ‘Explore what’s happening in the world of business’, followed by ‘Join Twister Today’. There are two call to action buttons ‘Sign up’ and ‘Log In’, which will navigate users to the relevant pages to access the site.  
+
+ 
+
+* The colours used on the landing page reflect the branding that is used consistently throughout the website: orange, white and black. The logo is also featured on every page once the user enters the site.  
+
+ 
+
+*All call-to-action buttons that link to a different page of the website and are fully responsive on both desktop mobile/tablet devices.  
+
+ 
+
+ 
+
+* Log In Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Log in to Twister’, followed by two log-in boxes; one for the username and one for the password. This is followed by an orange call to action ‘Log In’ button and a check box feature to ‘Remember Me’ to save username and password, as well as a ‘Forgot Password?’ hyperlink to reset password. In smaller text there’s also the option for new users to the site, with the hyperlink option to ‘Sign up now’, which will re-navigate users to the Sign-Up page. The top nav bar features a small Twister logo on the left side. It also has two call to action buttons: ‘Home’ – when clicked, it takes users back to the landing page & ‘About’ – which takes the users to an information page. On the right-hand side of the nav bar, there is an option to choose the Language, which is pre-set to English.  
+
+ 
+
+* Sign Up Page: This page features a nav bar with links to the Home and About pages. The logo appears next to the Home button on the nav bar. On the right-hand side of the nav bar there is an option to change the language of the site, default language is set to English. The page features the text ‘Sign Up to Twister’, followed by boxes to input the following data fields: full name, username, email, Password and Repeat Password. This is followed by an orange call to action ‘Sign Up’ button and a check box feature ‘Business Profile’ to allow the creation of a business profiles on Twister.  
+
+ 
+
+* Consumer Sign Up – After filling in the basic information as mentioned above, users will be navigated to another page, prompting them to upload a profile pic, enter their address and contact number. They will then click ‘Save & Next’ to gain access to the Twister site.  
+
+ 
+
+* Business Sign Up - After filling in the basic information as mentioned above, business users will be navigated to another page, prompting them to upload a profile pic, enter their business name, address, website URL, social media URL and contact number. They will then click ‘Save & Next’ to gain access to the Twister site.  
+
+## Features for Registered Users (Consumers) 
+
+Existing Features Overview (Non-Registered Users) 
+
+ 
+
+Header Home Icon- Exists on most pages and allows all users to easily navigate back to the home page (main feed) by clicking on it 
+
+ 
+
+Header Navigation Bar – Appears on the home page to allow quick access to search the site and view profile/account information 
+
+ 
+
+Comment/Like Posts – Allows users to comment/like on any post on their news feed 
+
+ 
+
+Share Posts – Allows users to share posts to various social media platforms, as well as email, what’s app and skype 
+
+ 
+
+Change Profile Picture/Information – Allows existing users to change/update profile pictures and profile information  
+
+ 
+
+Delete Profile - Allows users to delete profiles  
+
+ 
+
+Main Page: Once users log in, they land on the main homepage of the site. The nav bar running across the top of the page has an orange ‘Home’ icon, when clicked will re-navigate users back to the main homepage. The nav bar also has a grey search bar, which will allow users to type and search for keywords and with further development search for users/businesses. The right-hand side of the nav bar has a profile picture icon, alongside the username and a drop-down arrow, which brings up a drop-down menu. The drop-down menu options provide information on the account and is aptly named ‘Account info’, followed by a mini user profile picture, the username and their @username. It will also show how many accounts the user is following and how many followers the account has. The action buttons  The homepage has a similar layout to many social media sites, featuring a main feed which will allow users to view updates from their connections/businesses they follow. It also has several action buttons, which gives users quick licks to access their profile information, view their posts/bookmarked posts, change their passwords, delete their account, log out or change from light to dark mode.  Consumers have the ability to comment on posts, share posts and ‘like’ them using the heart icon present on all posts.  Next to main feed, there’s a white box which will give users suggestions on ‘Who to follow’, this will be based on their current following/users they may be interested in. Currently this feature only allows users to view that particular profile, but with further development, they will have the ability to follow.  
+
+ 
+
+The posts on main feed appear with the name of the user who has posted them, a small icon of their profile picture, as well as their @username and a time stamp of how many hours ago the post was posted. If posts have pictures, they appear under the text. Under the picture/text, there are three icons: comment bubble (with a number of how many comments appear under that particular post), love heart (to like the post) and a share icon (share to social media handles/emails/what’s app, skype). There is also a text input bar to add a comment.  
+
+ 
+
+One of the most noticeable features of the homepage is the clear font and a simplistic layout. I wanted the homepage to feel clean and simple, with the same orange, white & black colour scheme running throughout the side. An additional feature, users can choose between a  classic white interface and a dark mode option.  
+
+ 
+
+ 
+
+Features for Registered Users (Businesses) 
+
+Header Home Icon- Exists on most pages and allows all users to easily navigate back to the home page (main feed) by clicking on it 
+
+ 
+
+Header Navigation Bar – Appears on the home page to allow quick access to search the site and view profile/account information 
+
+ 
+
+Post – Business users are able to share posts and information for other users to view  
+
+ 
+
+Upload Images – Business users can share images to their posts as well images of products 
+
+ 
+
+Comment/Like Posts – Allows users to comment/like on any post on their news feed 
+
+ 
+
+Share Posts – Allows users to share posts to various social media platforms, as well as email, what’s app and skype 
+
+ 
+
+Change Profile Picture/Information – Allows existing users to change/update profile pictures and profile information  
+
+ 
+
+Additional Profile Information - have the options to view their Lists, Ads, Analytics and Products (which have been added, but due to time restrictions are not yet available) 
+
+ 
+
+Delete Profile - Allows users to delete profiles  
+
+ 
+
+Main Page: The homepage for business users is very similar layout to that of consumers, again, featuring a main feed which will allow users to view updates from the connections they follow. Business profiles have all the features available to consumers and some additional functionalities. Business users have the ability to post and upload pictures to posts as part of their user access levels. This is available in two different ways, one way is by typing directly into the text input box just above the main feed, businesses can upload pictures and then click the post button to post. Alternatively, there are two floating orange action buttons towards the bottom of the page, on the right-hand side, ‘+Post’ and ‘+Product’, which will allow businesses to not only post, but also upload products to their product catalogues. Businesses can also comment on posts, like and share.  
+
+ 
+
+Like the consumer profiles, businesses also have the ability to access their account info by clicking on the on the mini profile picture icon on the right-hand side of the nav bar. The drop-down menu also has several action buttons, which gives business users quick licks to access their profile information, view their posts/bookmarked posts, change their passwords, delete their account, log out or change from light to dark mode.  For business users, they also have the options to view their Lists, Ads, Analytics and Products (which have been added, but due to time restrictions are not yet available). 
+
+ 
  
 Log-in page:  
   
@@ -178,13 +289,64 @@ When registering:
  
 ## Future Implementation 
 
-* Allow registered users to delete their own account 
-* Build in in-app messaging feature, allowing users (businesses and consumers) to send private messages 
+* Ability for Consumers to Post – currently only have ability to comment/like/share posts, so this will be a great addition 
+
+* Build In-App Messaging Tool– this will allow users (businesses and consumers) to send private messages 
+
+* Search and View Specific Posts Using Hashtags 
+
+A* nalytics Dashboard for Business Users 
+
+* Trending posts 
+
 * Chargeable Business Profile Features – set up an additional cost for registration  
+
 * FAQ Page – this will give potential clients answers to the most asked questions via a table with FAQs and dropdown buttons to view answers 
+
 * Add CAPTCHA to Contact Form – this will protect the site from being spammed  
+
 * GDPR Compliant Pop-Up Screen – this will ensure that the company complies with the EU data protection laws, by enabling visitors to the website to approve or deny the processing of their personal data 
-* Site Privacy Information – this will set out clear guidelines about what language restrictions there are in place, what behaviour is expected online and what actions will lead to accounts being blocked
+
+* Site Privacy Information – this will set out clear guidelines about what language restrictions there are in place, what behaviour is expected online and what actions will lead to accounts being blocked 
+
+## Structure 
+
+Database Schema and Structure 
+
+
+The Twister Application uses a combination of two databases, PostgreSQL and MongoDB,  
+
+
+All User Authentication and the list of Categories are handled using relational-backed database (PostgreSQL using Flask+SQLAlchemy).   
+
+All the Standard CRUD data manipulation is handled using a nonrelational-backed database (MongoDB using Flask+PyMongo). The diagram below show the structure and schema used in the Postgres database. The Mongo db has all information for the content that is posted, such as the posts, the products information, the comments and any likes. 
+
+ 
+ ![Entity](https://user-images.githubusercontent.com/36114589/194945939-f5b02e66-9bbc-460e-bd4d-2a5b17637039.jpg)
+
+
+## CRUD
+
+# CREATE:
+         - All businesses can create new posts.
+         - Consumers & Businesses can create their own accounts
+# READ
+         - All businesses can read all posts
+         - All Consumers can read all posts
+# UPDATE 
+         - All business users can update their profiles
+         - All consumers can update their details
+# DELETE
+         - All consumers can delete their accounts
+         - All business users can delete their accounts
+         
+## KNOWN PROBLEMS
+
+- The like icon counts the likes and is working but currently not showing the number of likes on the user interface.
+- The search feature can be temperamental and not provide results every time a search is made.
+- Some features have had to be removed due to not working any mre such as the hash tag search
+- The site is not finished/polished the way I originally intednded it to look. Draft 1 which was just the front end, looked like this: https://github.com/NaziaSiddique/project3 Which is what I wanted this website to look like.
+- The deployment was done in Heroku, a few days ago, however, it seems to stop working from time to time and then starts working again.
 
 ## Technologies Used
 
