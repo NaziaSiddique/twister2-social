@@ -1,1 +1,1 @@
-web: gunicorn  app:app --worker-class=sync --workers=1 --timeout 90 --log-file=-
+web: gunicorn  app:app 

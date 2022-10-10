@@ -10,3 +10,6 @@ pymongo==4.2.0
 SQLAlchemy==1.3.20
 Werkzeug==2.1.2
 gunicorn==20.0.4
+flask-pymongo
+psycopg2
+pep8==1.7.1
